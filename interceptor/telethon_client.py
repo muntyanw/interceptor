@@ -4,13 +4,8 @@ from telethon import TelegramClient, events, types
 from telethon.sessions import StringSession
 from . import ses
 import os
-import sys
-import time
 from channels.layers import get_channel_layer  # для работы с WebSocket
-
-# Настройка логирования
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+from .logger import logger
 
 # Создание клиента
 client = TelegramClient(ses.session, ses.api_id, ses.api_hash)

@@ -12,6 +12,7 @@ from django.utils import timezone
 from telethon.errors import FloodWaitError
 from asgiref.sync import sync_to_async
 from django.core.cache import cache
+from .logger import logger
 
 # View для работы с сообщениями и их пересылки
 async def message_list_and_edit(request, edit_pk=None):
