@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Uvicorn",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "telegram_interceptor.asgi:application",
+                "--host", "0.0.0.0",
+                "--port", "8000"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                "DJANGO_SETTINGS_MODULE": "telegram_interceptor.settings",
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "justMyCode": true,
+            "python": "${workspaceFolder}/venv/Scripts/python.exe"
+        }
+    ]
+}

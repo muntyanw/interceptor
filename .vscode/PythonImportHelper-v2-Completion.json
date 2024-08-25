@@ -1,0 +1,917 @@
+[
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncWebsocketConsumer",
+        "importPath": "channels.generic.websocket",
+        "description": "channels.generic.websocket",
+        "isExtraImport": true,
+        "detail": "channels.generic.websocket",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "base64",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "base64",
+        "description": "base64",
+        "detail": "base64",
+        "documentation": {}
+    },
+    {
+        "label": "re_path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "StringSession",
+        "importPath": "telethon.sessions",
+        "description": "telethon.sessions",
+        "isExtraImport": true,
+        "detail": "telethon.sessions",
+        "documentation": {}
+    },
+    {
+        "label": "StringSession",
+        "importPath": "telethon.sessions",
+        "description": "telethon.sessions",
+        "isExtraImport": true,
+        "detail": "telethon.sessions",
+        "documentation": {}
+    },
+    {
+        "label": "StringSession",
+        "importPath": "telethon.sessions",
+        "description": "telethon.sessions",
+        "isExtraImport": true,
+        "detail": "telethon.sessions",
+        "documentation": {}
+    },
+    {
+        "label": "mysql.connector",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "TelegramClient",
+        "importPath": "telethon",
+        "description": "telethon",
+        "isExtraImport": true,
+        "detail": "telethon",
+        "documentation": {}
+    },
+    {
+        "label": "events",
+        "importPath": "telethon",
+        "description": "telethon",
+        "isExtraImport": true,
+        "detail": "telethon",
+        "documentation": {}
+    },
+    {
+        "label": "types",
+        "importPath": "telethon",
+        "description": "telethon",
+        "isExtraImport": true,
+        "detail": "telethon",
+        "documentation": {}
+    },
+    {
+        "label": "TelegramClient",
+        "importPath": "telethon",
+        "description": "telethon",
+        "isExtraImport": true,
+        "detail": "telethon",
+        "documentation": {}
+    },
+    {
+        "label": "errors",
+        "importPath": "telethon",
+        "description": "telethon",
+        "isExtraImport": true,
+        "detail": "telethon",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "get_channel_layer",
+        "importPath": "channels.layers",
+        "description": "channels.layers",
+        "isExtraImport": true,
+        "detail": "channels.layers",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "FloodWaitError",
+        "importPath": "telethon.errors",
+        "description": "telethon.errors",
+        "isExtraImport": true,
+        "detail": "telethon.errors",
+        "documentation": {}
+    },
+    {
+        "label": "sync_to_async",
+        "importPath": "asgiref.sync",
+        "description": "asgiref.sync",
+        "isExtraImport": true,
+        "detail": "asgiref.sync",
+        "documentation": {}
+    },
+    {
+        "label": "cache",
+        "importPath": "django.core.cache",
+        "description": "django.core.cache",
+        "isExtraImport": true,
+        "detail": "django.core.cache",
+        "documentation": {}
+    },
+    {
+        "label": "django",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django",
+        "description": "django",
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "ProtocolTypeRouter",
+        "importPath": "channels.routing",
+        "description": "channels.routing",
+        "isExtraImport": true,
+        "detail": "channels.routing",
+        "documentation": {}
+    },
+    {
+        "label": "URLRouter",
+        "importPath": "channels.routing",
+        "description": "channels.routing",
+        "isExtraImport": true,
+        "detail": "channels.routing",
+        "documentation": {}
+    },
+    {
+        "label": "AuthMiddlewareStack",
+        "importPath": "channels.auth",
+        "description": "channels.auth",
+        "isExtraImport": true,
+        "detail": "channels.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "websocket_urlpatterns",
+        "importPath": "interceptor.routing",
+        "description": "interceptor.routing",
+        "isExtraImport": true,
+        "detail": "interceptor.routing",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "views",
+        "importPath": "interceptor",
+        "description": "interceptor",
+        "isExtraImport": true,
+        "detail": "interceptor",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "LoggerMiddleware",
+        "kind": 6,
+        "importPath": "interceptor.middleware.logger",
+        "description": "interceptor.middleware.logger",
+        "peekOfCode": "class LoggerMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n    def __call__(self, request):\n       # Код, выполняемый перед обработкой представлением\n       # Настройка логирования\n       logging.basicConfig(level=logging.INFO)\n       logger = logging.getLogger(__name__)\n       response = self.get_response(request)\n        # Код, выполняемый после обработки представлением",
+        "detail": "interceptor.middleware.logger",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "interceptor.migrations.0001_initial",
+        "description": "interceptor.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = []\n    operations = [\n        migrations.CreateModel(\n            name=\"Message\",\n            fields=[\n                (\n                    \"id\",\n                    models.BigAutoField(",
+        "detail": "interceptor.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "interceptor.migrations.0002_telegrammessage_delete_message",
+        "description": "interceptor.migrations.0002_telegrammessage_delete_message",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('interceptor', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='TelegramMessage',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('chat_id', models.CharField(max_length=255)),",
+        "detail": "interceptor.migrations.0002_telegrammessage_delete_message",
+        "documentation": {}
+    },
+    {
+        "label": "InterceptorConfig",
+        "kind": 6,
+        "importPath": "interceptor.apps",
+        "description": "interceptor.apps",
+        "peekOfCode": "class InterceptorConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'interceptor'",
+        "detail": "interceptor.apps",
+        "documentation": {}
+    },
+    {
+        "label": "TelegramConsumer",
+        "kind": 6,
+        "importPath": "interceptor.consumers",
+        "description": "interceptor.consumers",
+        "peekOfCode": "class TelegramConsumer(AsyncWebsocketConsumer):\n    async def connect(self):\n        logger.info(\"[TelegramConsumer] Установка WebSocket соединения\")\n        await self.channel_layer.group_add(\"telegram_group\", self.channel_name)\n        await self.accept()\n        logger.info(\"[TelegramConsumer] WebSocket соединение установлено\")\n    async def disconnect(self, close_code):\n        logger.info(\n            f\"[TelegramConsumer] Отключение WebSocket соединения: код {close_code}\"\n        )",
+        "detail": "interceptor.consumers",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "interceptor.consumers",
+        "description": "interceptor.consumers",
+        "peekOfCode": "logger = logging.getLogger(__name__)\nclass TelegramConsumer(AsyncWebsocketConsumer):\n    async def connect(self):\n        logger.info(\"[TelegramConsumer] Установка WebSocket соединения\")\n        await self.channel_layer.group_add(\"telegram_group\", self.channel_name)\n        await self.accept()\n        logger.info(\"[TelegramConsumer] WebSocket соединение установлено\")\n    async def disconnect(self, close_code):\n        logger.info(\n            f\"[TelegramConsumer] Отключение WebSocket соединения: код {close_code}\"",
+        "detail": "interceptor.consumers",
+        "documentation": {}
+    },
+    {
+        "label": "TelegramMessage",
+        "kind": 6,
+        "importPath": "interceptor.models",
+        "description": "interceptor.models",
+        "peekOfCode": "class TelegramMessage(models.Model):\n    chat_id = models.CharField(max_length=255)\n    message_id = models.CharField(max_length=255)\n    text = models.TextField()\n    files = models.JSONField(default=list)  # Список файлов, привязанных к сообщению\n    edited_text = models.TextField(null=True, blank=True)\n    def __str__(self):\n        return f\"Message {self.message_id} from {self.chat_id}\"",
+        "detail": "interceptor.models",
+        "documentation": {}
+    },
+    {
+        "label": "websocket_urlpatterns",
+        "kind": 5,
+        "importPath": "interceptor.routing",
+        "description": "interceptor.routing",
+        "peekOfCode": "websocket_urlpatterns = [\n    re_path(r'ws/telegram/$', consumers.TelegramConsumer.as_asgi()),\n]",
+        "detail": "interceptor.routing",
+        "documentation": {}
+    },
+    {
+        "label": "load_session",
+        "kind": 2,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "def load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")\n    cursor.execute(\n        \"SELECT session_string FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,),\n    )\n    row = cursor.fetchone()\n    if row:\n        logger.info(\"Сессия успешно загружена\")\n    else:",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "save_session",
+        "kind": 2,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "def save_session(session_name, session_string):\n    logger.info(f\"Сохранение сессии для: {session_name}\")\n    cursor.execute(\n        \"\"\"\n        INSERT INTO telethon_sessions (session_name, session_string)\n        VALUES (%s, %s)\n        ON DUPLICATE KEY UPDATE\n        session_string = VALUES(session_string)\n        \"\"\",\n        (session_name, session_string),",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "api_id",
+        "kind": 5,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "api_id = 24364263\napi_hash = \"1f03c4f0e8617dd5fe4f16e9d629f47c\"\n# Настройка логирования\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(__name__)\nconn = mysql.connector.connect(\n    host=\"localhost\", user=\"root\", password=\"88888888\", database=\"btp\"\n)\ncursor = conn.cursor()\ndef load_session(session_name):",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "api_hash",
+        "kind": 5,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "api_hash = \"1f03c4f0e8617dd5fe4f16e9d629f47c\"\n# Настройка логирования\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(__name__)\nconn = mysql.connector.connect(\n    host=\"localhost\", user=\"root\", password=\"88888888\", database=\"btp\"\n)\ncursor = conn.cursor()\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "logger = logging.getLogger(__name__)\nconn = mysql.connector.connect(\n    host=\"localhost\", user=\"root\", password=\"88888888\", database=\"btp\"\n)\ncursor = conn.cursor()\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")\n    cursor.execute(\n        \"SELECT session_string FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,),",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "kind": 5,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "conn = mysql.connector.connect(\n    host=\"localhost\", user=\"root\", password=\"88888888\", database=\"btp\"\n)\ncursor = conn.cursor()\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")\n    cursor.execute(\n        \"SELECT session_string FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,),\n    )",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "cursor",
+        "kind": 5,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "cursor = conn.cursor()\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")\n    cursor.execute(\n        \"SELECT session_string FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,),\n    )\n    row = cursor.fetchone()\n    if row:\n        logger.info(\"Сессия успешно загружена\")",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "session_name",
+        "kind": 5,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "session_name = \"intercept_session\"\nsession_string = load_session(session_name) or \"\"\nsession = StringSession(session_string)\nchannels_to_listen = [4593819858, 2204843457, 1242446516, 4517954004, 1363028986]\nchannels_to_send = ['@MuntyanValery']",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "session_string",
+        "kind": 5,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "session_string = load_session(session_name) or \"\"\nsession = StringSession(session_string)\nchannels_to_listen = [4593819858, 2204843457, 1242446516, 4517954004, 1363028986]\nchannels_to_send = ['@MuntyanValery']",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "session",
+        "kind": 5,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "session = StringSession(session_string)\nchannels_to_listen = [4593819858, 2204843457, 1242446516, 4517954004, 1363028986]\nchannels_to_send = ['@MuntyanValery']",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "channels_to_listen",
+        "kind": 5,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "channels_to_listen = [4593819858, 2204843457, 1242446516, 4517954004, 1363028986]\nchannels_to_send = ['@MuntyanValery']",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "channels_to_send",
+        "kind": 5,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "channels_to_send = ['@MuntyanValery']",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "interceptor.telethon_client",
+        "description": "interceptor.telethon_client",
+        "peekOfCode": "logger = logging.getLogger(__name__)\n# Создание клиента\nclient = TelegramClient(ses.session, ses.api_id, ses.api_hash)\nasync def send_message_to_channels(message_text, files):\n    logger.info(\n        f\"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}\"\n    )\n    await asyncio.sleep(1)  \n    for channel in ses.channels_to_send:\n        if files:",
+        "detail": "interceptor.telethon_client",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "interceptor.telethon_client",
+        "description": "interceptor.telethon_client",
+        "peekOfCode": "client = TelegramClient(ses.session, ses.api_id, ses.api_hash)\nasync def send_message_to_channels(message_text, files):\n    logger.info(\n        f\"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}\"\n    )\n    await asyncio.sleep(1)  \n    for channel in ses.channels_to_send:\n        if files:\n            for file in files:\n                logger.info(",
+        "detail": "interceptor.telethon_client",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "interceptor.temp",
+        "description": "interceptor.temp",
+        "peekOfCode": "data = json.loads(text_data)\n        message_text = data.get(\"new_text\", \"\")\n        new_files = data.get(\"new_files\", [])\n        existing_files = data.get(\"existing_files\", [])\n        file_objects = []\n        # Обработка новых файлов\n        for file in new_files:\n            file_name = file.get(\"name\")\n            file_data = file.get(\"data\").split(\",\")[1]  # Убираем префикс 'data:image/jpeg;base64,'\n            file_bytes = base64.b64decode(file_data)",
+        "detail": "interceptor.temp",
+        "documentation": {}
+    },
+    {
+        "label": "send_message",
+        "kind": 2,
+        "importPath": "interceptor.views",
+        "description": "interceptor.views",
+        "peekOfCode": "def send_message(request, pk, chat_id):\n    message = get_object_or_404(TelegramMessage, pk=pk)\n    loop = asyncio.new_event_loop()\n    asyncio.set_event_loop(loop)\n    loop.run_until_complete(\n        client.send_message(chat_id, message.edited_text or message.text)\n    )\n    if request.is_ajax():\n        return JsonResponse({\"status\": \"sent\"})\n    return redirect(\"message_list_and_edit\")",
+        "detail": "interceptor.views",
+        "documentation": {}
+    },
+    {
+        "label": "remove_file",
+        "kind": 2,
+        "importPath": "interceptor.views",
+        "description": "interceptor.views",
+        "peekOfCode": "def remove_file(request, pk, file_index):\n    message = get_object_or_404(TelegramMessage, pk=pk)\n    message.files.pop(file_index)\n    message.save()\n    return redirect(\"message_list_and_edit\", edit_pk=pk)\nasync def fetch_dialogs(client):\n    async with client:\n        await client.start()\n        dialogs = await client.get_dialogs()\n        contacts_and_channels = []",
+        "detail": "interceptor.views",
+        "documentation": {}
+    },
+    {
+        "label": "get_contacts_and_channels",
+        "kind": 2,
+        "importPath": "interceptor.views",
+        "description": "interceptor.views",
+        "peekOfCode": "def get_contacts_and_channels(request):\n    session_string = ses.load_session(ses.session_name)\n    # Создание нового цикла событий для асинхронной операции\n    loop = asyncio.new_event_loop()\n    asyncio.set_event_loop(loop)\n    try:\n        client = TelegramClient(StringSession(session_string), ses.api_id, ses.api_hash)\n        # Используем sync_to_async для асинхронной функции с созданным циклом событий\n        contacts_and_channels = loop.run_until_complete(fetch_dialogs(client))\n    finally:",
+        "detail": "interceptor.views",
+        "documentation": {}
+    },
+    {
+        "label": "restart_telethon_client",
+        "kind": 2,
+        "importPath": "interceptor.views",
+        "description": "interceptor.views",
+        "peekOfCode": "def restart_telethon_client():\n    subprocess.Popen(\n        [\"python3\", os.path.join(os.path.dirname(__file__), \"telethon_client.py\")]\n    )",
+        "detail": "interceptor.views",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "telegram_interceptor.asgi",
+        "description": "telegram_interceptor.asgi",
+        "peekOfCode": "application = ProtocolTypeRouter({\n    \"http\": get_asgi_application(),\n    \"websocket\": AuthMiddlewareStack(\n        URLRouter(\n            websocket_urlpatterns\n        )\n    ),\n})",
+        "detail": "telegram_interceptor.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure--1oswlps$#dy(#$b^#v+%_6mslxfng7$d^+er((_sy@ycc7b39'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "SECRET_KEY = 'django-insecure--1oswlps$#dy(#$b^#v+%_6mslxfng7$d^+er((_sy@ycc7b39'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'interceptor',",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'interceptor',\n    'channels',\n]",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "ROOT_URLCONF = 'telegram_interceptor.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'telegram_interceptor.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'btp',\n        'USER': 'root',\n        'PASSWORD': '88888888',\n        'HOST': 'localhost',",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'btp',\n        'USER': 'root',\n        'PASSWORD': '88888888',\n        'HOST': 'localhost',\n        'PORT': '3306',  # по умолчанию 3306 для MySQL\n    }\n}",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'Europe/Kiev'\nUSE_I18N = True\nUSE_TZ = False\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",\n]",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "TIME_ZONE = 'Europe/Kiev'\nUSE_I18N = True\nUSE_TZ = False\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",\n]\n# Убедитесь, что STATIC_ROOT определен для сбора статических файлов",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = False\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",\n]\n# Убедитесь, что STATIC_ROOT определен для сбора статических файлов\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "USE_TZ = False\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",\n]\n# Убедитесь, что STATIC_ROOT определен для сбора статических файлов\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n# Default primary key field type",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = [\n    BASE_DIR / \"static\",\n]\n# Убедитесь, что STATIC_ROOT определен для сбора статических файлов\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSESSION_NAME = \"interceptor_session\" ",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "STATICFILES_DIRS = [\n    BASE_DIR / \"static\",\n]\n# Убедитесь, что STATIC_ROOT определен для сбора статических файлов\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSESSION_NAME = \"interceptor_session\" \nAPI_ID = 24364263  # Замените на ваш API ID",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSESSION_NAME = \"interceptor_session\" \nAPI_ID = 24364263  # Замените на ваш API ID\nAPI_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSESSION_NAME = \"interceptor_session\" \nAPI_ID = 24364263  # Замените на ваш API ID\nAPI_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SESSION_NAME",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "SESSION_NAME = \"interceptor_session\" \nAPI_ID = 24364263  # Замените на ваш API ID\nAPI_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "API_ID",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "API_ID = 24364263  # Замените на ваш API ID\nAPI_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "API_HASH",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "API_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },\n    },",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ASGI_APPLICATION",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "ASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },\n    },\n}",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "REDISHOST",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "REDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },\n    },\n}\nSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CHANNEL_LAYERS",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "CHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },\n    },\n}\nSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_STORAGE",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "telegram_interceptor.urls",
+        "description": "telegram_interceptor.urls",
+        "peekOfCode": "urlpatterns = [\n    path('telegram_auth/', views.telegram_auth, name='telegram_auth'),\n    path('', views.start_client_view, name='start_client'),\n    path('messages', views.message_list_and_edit, name='message_list_and_edit'),\n    path('edit/<int:edit_pk>/', views.message_list_and_edit, name='message_list_and_edit'),\n    path('send/<int:pk>/<str:chat_id>/', views.send_message, name='send_message'),\n    path('remove_file/<int:pk>/<int:file_index>/', views.remove_file, name='remove_file'),\n    path('contacts-and-channels/', views.get_contacts_and_channels, name='contacts_and_channels'),\n]\nurlpatterns += static('/storage/', document_root=os.path.join(settings.BASE_DIR, 'storage'))",
+        "detail": "telegram_interceptor.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "telegram_interceptor.wsgi",
+        "description": "telegram_interceptor.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "telegram_interceptor.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "manage",
+        "description": "manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'telegram_interceptor.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "manage",
+        "documentation": {}
+    }
+]
