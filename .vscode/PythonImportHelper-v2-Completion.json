@@ -1,11 +1,18 @@
 [
     {
-        "label": "logging",
-        "kind": 6,
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "importPath": "logging",
-        "description": "logging",
-        "detail": "logging",
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -71,6 +78,15 @@
         "importPath": "json",
         "description": "json",
         "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
         "documentation": {}
     },
     {
@@ -149,6 +165,22 @@
         "documentation": {}
     },
     {
+        "label": "sync_to_async",
+        "importPath": "asgiref.sync",
+        "description": "asgiref.sync",
+        "isExtraImport": true,
+        "detail": "asgiref.sync",
+        "documentation": {}
+    },
+    {
+        "label": "sync_to_async",
+        "importPath": "asgiref.sync",
+        "description": "asgiref.sync",
+        "isExtraImport": true,
+        "detail": "asgiref.sync",
+        "documentation": {}
+    },
+    {
         "label": "asyncio",
         "kind": 6,
         "isExtraImport": true,
@@ -198,29 +230,20 @@
         "documentation": {}
     },
     {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
-        "documentation": {}
-    },
-    {
-        "label": "time",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "time",
-        "description": "time",
-        "detail": "time",
-        "documentation": {}
-    },
-    {
         "label": "get_channel_layer",
         "importPath": "channels.layers",
         "description": "channels.layers",
         "isExtraImport": true,
         "detail": "channels.layers",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
         "documentation": {}
     },
     {
@@ -241,6 +264,14 @@
     },
     {
         "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -302,14 +333,6 @@
         "description": "telethon.errors",
         "isExtraImport": true,
         "detail": "telethon.errors",
-        "documentation": {}
-    },
-    {
-        "label": "sync_to_async",
-        "importPath": "asgiref.sync",
-        "description": "asgiref.sync",
-        "isExtraImport": true,
-        "detail": "asgiref.sync",
         "documentation": {}
     },
     {
@@ -402,12 +425,21 @@
         "documentation": {}
     },
     {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
         "label": "LoggerMiddleware",
         "kind": 6,
-        "importPath": "interceptor.middleware.logger",
-        "description": "interceptor.middleware.logger",
-        "peekOfCode": "class LoggerMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n    def __call__(self, request):\n       # Код, выполняемый перед обработкой представлением\n       # Настройка логирования\n       logging.basicConfig(level=logging.INFO)\n       logger = logging.getLogger(__name__)\n       response = self.get_response(request)\n        # Код, выполняемый после обработки представлением",
-        "detail": "interceptor.middleware.logger",
+        "importPath": "interceptor.middleware.LoggerMiddleware",
+        "description": "interceptor.middleware.LoggerMiddleware",
+        "peekOfCode": "class LoggerMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n    def __call__(self, request):\n        # Код, выполняемый перед обработкой представлением\n        logger.info(f\"Request path: {request.path}\")\n        response = self.get_response(request)\n        # Код, выполняемый после обработки представлением\n        logger.info(f\"Response status code: {response.status_code}\")\n        return response",
+        "detail": "interceptor.middleware.LoggerMiddleware",
         "documentation": {}
     },
     {
@@ -429,12 +461,48 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "interceptor.migrations.0003_autosendmessagesetting",
+        "description": "interceptor.migrations.0003_autosendmessagesetting",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('interceptor', '0002_telegrammessage_delete_message'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='AutoSendMessageSetting',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('is_enabled', models.BooleanField(default=False, verbose_name='Автоматическая отправка включена')),",
+        "detail": "interceptor.migrations.0003_autosendmessagesetting",
+        "documentation": {}
+    },
+    {
+        "label": "AutoSendMessageSettingAdmin",
+        "kind": 6,
+        "importPath": "interceptor.admin",
+        "description": "interceptor.admin",
+        "peekOfCode": "class AutoSendMessageSettingAdmin(admin.ModelAdmin):\n    list_display = ('is_enabled', 'auto_sent_count')\n    list_editable = ('is_enabled',)\n    list_display_links = ('auto_sent_count',)  # Сделать поле 'auto_sent_count' ссылкой\n# Если вы не хотите, чтобы какие-либо поля были ссылками:\n# list_display_links = (None,)",
+        "detail": "interceptor.admin",
+        "documentation": {}
+    },
+    {
         "label": "InterceptorConfig",
         "kind": 6,
         "importPath": "interceptor.apps",
         "description": "interceptor.apps",
         "peekOfCode": "class InterceptorConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'interceptor'",
         "detail": "interceptor.apps",
+        "documentation": {}
+    },
+    {
+        "label": "channels_to_listen",
+        "kind": 5,
+        "importPath": "interceptor.channels",
+        "description": "interceptor.channels",
+        "peekOfCode": "channels_to_listen = {\n    4593819858: {\n        'moderation_if_image': True,\n        'replacements': {\n            'слово1': 'замена1',\n            'слово2': 'замена2',\n            'слово3': 'замена3',\n            'слово4': 'замена4',\n        }\n    },",
+        "detail": "interceptor.channels",
+        "documentation": {}
+    },
+    {
+        "label": "channels_to_send",
+        "kind": 5,
+        "importPath": "interceptor.channels",
+        "description": "interceptor.channels",
+        "peekOfCode": "channels_to_send = ['@MuntyanValery']",
+        "detail": "interceptor.channels",
         "documentation": {}
     },
     {
@@ -456,11 +524,29 @@
         "documentation": {}
     },
     {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "interceptor.logger",
+        "description": "interceptor.logger",
+        "peekOfCode": "logger = logging.getLogger(__name__)",
+        "detail": "interceptor.logger",
+        "documentation": {}
+    },
+    {
         "label": "TelegramMessage",
         "kind": 6,
         "importPath": "interceptor.models",
         "description": "interceptor.models",
-        "peekOfCode": "class TelegramMessage(models.Model):\n    chat_id = models.CharField(max_length=255)\n    message_id = models.CharField(max_length=255)\n    text = models.TextField()\n    files = models.JSONField(default=list)  # Список файлов, привязанных к сообщению\n    edited_text = models.TextField(null=True, blank=True)\n    def __str__(self):\n        return f\"Message {self.message_id} from {self.chat_id}\"",
+        "peekOfCode": "class TelegramMessage(models.Model):\n    chat_id = models.CharField(max_length=255)\n    message_id = models.CharField(max_length=255)\n    text = models.TextField()\n    files = models.JSONField(default=list)  # Список файлов, привязанных к сообщению\n    edited_text = models.TextField(null=True, blank=True)\n    def __str__(self):\n        return f\"Message {self.message_id} from {self.chat_id}\"\nclass AutoSendMessageSetting(models.Model):\n    is_enabled = models.BooleanField(default=False, verbose_name=\"Автоматическая отправка включена\")",
+        "detail": "interceptor.models",
+        "documentation": {}
+    },
+    {
+        "label": "AutoSendMessageSetting",
+        "kind": 6,
+        "importPath": "interceptor.models",
+        "description": "interceptor.models",
+        "peekOfCode": "class AutoSendMessageSetting(models.Model):\n    is_enabled = models.BooleanField(default=False, verbose_name=\"Автоматическая отправка включена\")\n    auto_sent_count = models.IntegerField(default=0, verbose_name=\"Количество автоматически отправленных сообщений\")",
         "detail": "interceptor.models",
         "documentation": {}
     },
@@ -541,7 +627,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "session_name = \"intercept_session\"\nsession_string = load_session(session_name) or \"\"\nsession = StringSession(session_string)\nchannels_to_listen = [4593819858, 2204843457, 1242446516, 4517954004, 1363028986]\nchannels_to_send = ['@MuntyanValery']",
+        "peekOfCode": "session_name = \"intercept_session\"\nsession_string = load_session(session_name) or \"\"\nsession = StringSession(session_string)\nchannels_to_listen = [\n    4593819858, \n    2204843457, \n    1242446516, \n    4517954004, \n    1363028986\n]",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -550,7 +636,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "session_string = load_session(session_name) or \"\"\nsession = StringSession(session_string)\nchannels_to_listen = [4593819858, 2204843457, 1242446516, 4517954004, 1363028986]\nchannels_to_send = ['@MuntyanValery']",
+        "peekOfCode": "session_string = load_session(session_name) or \"\"\nsession = StringSession(session_string)\nchannels_to_listen = [\n    4593819858, \n    2204843457, \n    1242446516, \n    4517954004, \n    1363028986\n]\nchannels_to_send = ['@MuntyanValery']",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -559,7 +645,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "session = StringSession(session_string)\nchannels_to_listen = [4593819858, 2204843457, 1242446516, 4517954004, 1363028986]\nchannels_to_send = ['@MuntyanValery']",
+        "peekOfCode": "session = StringSession(session_string)\nchannels_to_listen = [\n    4593819858, \n    2204843457, \n    1242446516, \n    4517954004, \n    1363028986\n]\nchannels_to_send = ['@MuntyanValery']",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -568,7 +654,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "channels_to_listen = [4593819858, 2204843457, 1242446516, 4517954004, 1363028986]\nchannels_to_send = ['@MuntyanValery']",
+        "peekOfCode": "channels_to_listen = [\n    4593819858, \n    2204843457, \n    1242446516, \n    4517954004, \n    1363028986\n]\nchannels_to_send = ['@MuntyanValery']",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -582,11 +668,20 @@
         "documentation": {}
     },
     {
-        "label": "logger",
-        "kind": 5,
+        "label": "replace_words",
+        "kind": 2,
         "importPath": "interceptor.telethon_client",
         "description": "interceptor.telethon_client",
-        "peekOfCode": "logger = logging.getLogger(__name__)\n# Создание клиента\nclient = TelegramClient(ses.session, ses.api_id, ses.api_hash)\nasync def send_message_to_channels(message_text, files):\n    logger.info(\n        f\"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}\"\n    )\n    await asyncio.sleep(1)  \n    for channel in ses.channels_to_send:\n        if files:",
+        "peekOfCode": "def replace_words(text, channel_id):\n    channel_info = channels.channels_to_listen.get(channel_id, {})\n    replacements = channel_info.get('replacements', {})\n    def replace_match(match):\n        word = match.group(0)\n        # Проверяем, соответствует ли слово одному из ключей в словаре замен\n        for key, value in replacements.items():\n            if key in word:\n                return value\n        return word  # Если совпадений нет, возвращаем слово без изменений",
+        "detail": "interceptor.telethon_client",
+        "documentation": {}
+    },
+    {
+        "label": "extract_original_id",
+        "kind": 2,
+        "importPath": "interceptor.telethon_client",
+        "description": "interceptor.telethon_client",
+        "peekOfCode": "def extract_original_id(chat_id):\n    # Преобразовываем chat_id в строку для удобства обработки\n    chat_id_str = str(chat_id)\n    # Проверяем, начинается ли строка с '-100' и извлекаем число\n    match = re.match(r'-100(\\d+)', chat_id_str)\n    if match:\n        return int(match.group(1))  # Возвращаем ID без префикса, преобразованное в int\n    return abs(chat_id)  # Возвращаем оригинальный chat_id, если префикс отсутствует\nasync def start_client():\n    download_directory = \"storage/\"",
         "detail": "interceptor.telethon_client",
         "documentation": {}
     },
@@ -595,7 +690,7 @@
         "kind": 5,
         "importPath": "interceptor.telethon_client",
         "description": "interceptor.telethon_client",
-        "peekOfCode": "client = TelegramClient(ses.session, ses.api_id, ses.api_hash)\nasync def send_message_to_channels(message_text, files):\n    logger.info(\n        f\"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}\"\n    )\n    await asyncio.sleep(1)  \n    for channel in ses.channels_to_send:\n        if files:\n            for file in files:\n                logger.info(",
+        "peekOfCode": "client = TelegramClient(ses.session, ses.api_id, ses.api_hash)\nasync def send_message_to_channels(message_text, files):\n    logger.info(\n        f\"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}\"\n    )\n    await asyncio.sleep(1)\n    for channel in channels.channels_to_send:\n        if files:\n            for file in files:\n                logger.info(",
         "detail": "interceptor.telethon_client",
         "documentation": {}
     },
@@ -640,7 +735,16 @@
         "kind": 2,
         "importPath": "interceptor.views",
         "description": "interceptor.views",
-        "peekOfCode": "def restart_telethon_client():\n    subprocess.Popen(\n        [\"python3\", os.path.join(os.path.dirname(__file__), \"telethon_client.py\")]\n    )",
+        "peekOfCode": "def restart_telethon_client():\n    subprocess.Popen(\n        [\"python3\", os.path.join(os.path.dirname(__file__), \"telethon_client.py\")]\n    )\ndef update_auto_send_setting(request):\n    if request.method == \"POST\":\n        setting = AutoSendMessageSetting.objects.first()\n        if not setting:\n            setting = AutoSendMessageSetting()\n        setting.is_enabled = 'is_enabled' in request.POST",
+        "detail": "interceptor.views",
+        "documentation": {}
+    },
+    {
+        "label": "update_auto_send_setting",
+        "kind": 2,
+        "importPath": "interceptor.views",
+        "description": "interceptor.views",
+        "peekOfCode": "def update_auto_send_setting(request):\n    if request.method == \"POST\":\n        setting = AutoSendMessageSetting.objects.first()\n        if not setting:\n            setting = AutoSendMessageSetting()\n        setting.is_enabled = 'is_enabled' in request.POST\n        setting.save()\n    return redirect('message_list_and_edit')",
         "detail": "interceptor.views",
         "documentation": {}
     },
@@ -703,7 +807,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    'interceptor.middleware.LoggerMiddleware.LoggerMiddleware',",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -892,7 +996,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.urls",
         "description": "telegram_interceptor.urls",
-        "peekOfCode": "urlpatterns = [\n    path('telegram_auth/', views.telegram_auth, name='telegram_auth'),\n    path('', views.start_client_view, name='start_client'),\n    path('messages', views.message_list_and_edit, name='message_list_and_edit'),\n    path('edit/<int:edit_pk>/', views.message_list_and_edit, name='message_list_and_edit'),\n    path('send/<int:pk>/<str:chat_id>/', views.send_message, name='send_message'),\n    path('remove_file/<int:pk>/<int:file_index>/', views.remove_file, name='remove_file'),\n    path('contacts-and-channels/', views.get_contacts_and_channels, name='contacts_and_channels'),\n]\nurlpatterns += static('/storage/', document_root=os.path.join(settings.BASE_DIR, 'storage'))",
+        "peekOfCode": "urlpatterns = [\n    path('telegram_auth/', views.telegram_auth, name='telegram_auth'),\n    path('', views.start_client_view, name='start_client'),\n    path('messages', views.message_list_and_edit, name='message_list_and_edit'),\n    path('edit/<int:edit_pk>/', views.message_list_and_edit, name='message_list_and_edit'),\n    path('send/<int:pk>/<str:chat_id>/', views.send_message, name='send_message'),\n    path('remove_file/<int:pk>/<int:file_index>/', views.remove_file, name='remove_file'),\n    path('contacts-and-channels/', views.get_contacts_and_channels, name='contacts_and_channels'),\n    path('update-setting/', views.update_auto_send_setting, name='update_auto_send_setting'),\n]",
         "detail": "telegram_interceptor.urls",
         "documentation": {}
     },

@@ -13,6 +13,9 @@ from telethon.errors import FloodWaitError
 from asgiref.sync import sync_to_async
 from django.core.cache import cache
 from .logger import logger
+from .models import AutoSendMessageSetting
+from django.shortcuts import redirect
+
 
 # View для работы с сообщениями и их пересылки
 async def message_list_and_edit(request, edit_pk=None):
@@ -24,28 +27,29 @@ async def message_list_and_edit(request, edit_pk=None):
     await client.connect()
     if not await client.is_user_authorized() or not telethon_client_task_running:
         return redirect("/")
-    
-    messages = TelegramMessage.objects.all()
-    edit_message = None
 
+    # Получение списка сообщений и редактируемого сообщения асинхронно
+    messages = await sync_to_async(list)(TelegramMessage.objects.all())
+    edit_message = None
     if edit_pk:
-        edit_message = get_object_or_404(TelegramMessage, pk=edit_pk)
+        edit_message = await sync_to_async(get_object_or_404)(TelegramMessage, pk=edit_pk)
 
     if request.method == "POST" and edit_message:
         edit_message.edited_text = request.POST.get("text")
-        edit_message.save()
+        await sync_to_async(edit_message.save)()
         return redirect("message_list_and_edit")
 
-    render_sync = sync_to_async(render)
-    return await render_sync(
+    setting = await sync_to_async(AutoSendMessageSetting.objects.first)()
+
+    return await sync_to_async(render)(
         request,
         "message_list_and_edit.html",
         {
             "messages": messages,
             "edit_message": edit_message,
+            "setting": setting
         },
     )
-
 
 def send_message(request, pk, chat_id):
     message = get_object_or_404(TelegramMessage, pk=pk)
@@ -266,3 +270,13 @@ def restart_telethon_client():
     subprocess.Popen(
         ["python3", os.path.join(os.path.dirname(__file__), "telethon_client.py")]
     )
+
+
+def update_auto_send_setting(request):
+    if request.method == "POST":
+        setting = AutoSendMessageSetting.objects.first()
+        if not setting:
+            setting = AutoSendMessageSetting()
+        setting.is_enabled = 'is_enabled' in request.POST
+        setting.save()
+    return redirect('message_list_and_edit')

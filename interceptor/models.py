@@ -9,3 +9,7 @@ class TelegramMessage(models.Model):
 
     def __str__(self):
         return f"Message {self.message_id} from {self.chat_id}"
+    
+class AutoSendMessageSetting(models.Model):
+    is_enabled = models.BooleanField(default=False, verbose_name="Автоматическая отправка включена")
+    auto_sent_count = models.IntegerField(default=0, verbose_name="Количество автоматически отправленных сообщений")

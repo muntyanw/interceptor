@@ -48,6 +48,12 @@ session_name = "intercept_session"
 session_string = load_session(session_name) or ""
 session = StringSession(session_string)
 
-channels_to_listen = [4593819858, 2204843457, 1242446516, 4517954004, 1363028986]
+channels_to_listen = [
+    4593819858, 
+    2204843457, 
+    1242446516, 
+    4517954004, 
+    1363028986
+]
 
 channels_to_send = ['@MuntyanValery']

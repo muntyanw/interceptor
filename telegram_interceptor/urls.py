@@ -12,6 +12,7 @@ urlpatterns = [
     path('send/<int:pk>/<str:chat_id>/', views.send_message, name='send_message'),
     path('remove_file/<int:pk>/<int:file_index>/', views.remove_file, name='remove_file'),
     path('contacts-and-channels/', views.get_contacts_and_channels, name='contacts_and_channels'),
+    path('update-setting/', views.update_auto_send_setting, name='update_auto_send_setting'),
 ]
 
 urlpatterns += static('/storage/', document_root=os.path.join(settings.BASE_DIR, 'storage'))
