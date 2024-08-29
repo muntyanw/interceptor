@@ -1,6 +1,8 @@
 from telethon.sessions import StringSession
 import mysql.connector
 import logging
+from django.conf import settings
+
 
 api_id = 24364263
 api_hash = "1f03c4f0e8617dd5fe4f16e9d629f47c"
