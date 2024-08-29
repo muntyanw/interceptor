@@ -82,8 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'btp',
-        'USER': 'root',
-        'PASSWORD': '88888888',
+        'USER': 'inter',
+        'PASSWORD': '!A3z5puU68G*',
         'HOST': 'localhost',
         'PORT': '3306',  # по умолчанию 3306 для MySQL
     }
