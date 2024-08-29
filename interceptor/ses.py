@@ -9,9 +9,14 @@ api_hash = "1f03c4f0e8617dd5fe4f16e9d629f47c"
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-conn = mysql.connector.connect(
-    host="localhost", user="root", password="88888888", database="btp"
-)
+# Настройки подключения к базе данных из settings.py
+db_config = {
+    'host': settings.DATABASES['default']['HOST'],
+    'user': settings.DATABASES['default']['USER'],
+    'password': settings.DATABASES['default']['PASSWORD'],
+    'database': settings.DATABASES['default']['NAME']
+}
+conn = mysql.connector.connect(**db_config)
 
 cursor = conn.cursor()
 
