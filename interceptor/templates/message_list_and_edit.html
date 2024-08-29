@@ -164,6 +164,7 @@
     <script>
       $(document).ready(function () {
         // Подключение к WebSocket для приема сообщений в реальном времени
+        alert(window.location.host);
         const chatSocket = new WebSocket(
           "ws://" + window.location.host + "/ws/telegram/"
         );
