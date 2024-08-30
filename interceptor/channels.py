@@ -56,6 +56,7 @@ channels_to_listen = {
             'підари': 'геі',
             'блядина': 'гуляща',
         },
+    },
     2023070684: { 
         'moderation_if_image': True,
         'replacements': {
