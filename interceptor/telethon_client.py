@@ -117,7 +117,7 @@ async def start_client():
                     )
                 else:
                     logger.info(f"[handler] Автоматическое перенаправление в канал")
-                     await send_message_to_channels(modified_message, file_paths)   
+                    await send_message_to_channels(modified_message, file_paths)   
                 
 
         logger.info("[start_client] Обработчики NewMessage зарегистрированы для всех каналов")
