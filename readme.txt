@@ -25,7 +25,7 @@ source venv/bin/activate
 3. запустить сам скрипт
 uvicorn telegram_interceptor.asgi:application --host 0.0.0.0 --port 8000 --reload
 
-или одной командой
+или это все делается одной командой
 /usr/share/nginx/html/interceptor/start.sh
 
 если будут траблы с правами то
