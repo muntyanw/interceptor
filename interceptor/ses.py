@@ -2,6 +2,8 @@ from telethon.sessions import StringSession
 import mysql.connector
 import logging
 from django.conf import settings
+import os
+import django
 
 
 api_id = 24364263
@@ -10,6 +12,13 @@ api_hash = "1f03c4f0e8617dd5fe4f16e9d629f47c"
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+logger.info("[asgi] DJANGO_SETTINGS_MODULE := telegram_interceptor.settings")
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'telegram_interceptor.settings')
+
+# Инициализация Django перед использованием любых моделей или компонентов
+logger.info("[asgi] django.setup()")
+django.setup()
 
 # Настройки подключения к базе данных из settings.py
 db_config = {
