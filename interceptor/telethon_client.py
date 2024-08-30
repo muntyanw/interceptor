@@ -45,7 +45,7 @@ def replace_words(text, channel_id):
     # Создаем регулярное выражение для поиска "слов" с учетом замен
     pattern = r'\b\w+\b'
     modified_text = re.sub(pattern, replace_match, text)
-    return modified_text, channel_info.get('requires_moderation', False)
+    return modified_text, channel_info.get('moderation_if_image', False)
 
 def extract_original_id(chat_id):
     # Преобразовываем chat_id в строку для удобства обработки
