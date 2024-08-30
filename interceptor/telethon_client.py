@@ -45,7 +45,9 @@ def replace_words(text, channel_id):
     # Создаем регулярное выражение для поиска "слов" с учетом замен
     pattern = r'\b\w+\b'
     modified_text = re.sub(pattern, replace_match, text)
-    return modified_text, channel_info.get('moderation_if_image', False)
+    moderation_if_image = channel_info.get('moderation_if_image', False)
+    logger.info(f"[replace_words]  moderation_if_image = {moderation_if_image}")
+    return modified_text, moderation_if_image
 
 def extract_original_id(chat_id):
     # Преобразовываем chat_id в строку для удобства обработки
@@ -99,9 +101,11 @@ async def start_client():
                 #await sync_to_async(setting.save)()
             else:
                 modified_message, moderation_if_image = replace_words(message, chat_id)
+                logger.error(f"[handler] moderation_if_image: {moderation_if_image}, file_paths: {file_paths},  moderation_if_image and file_paths: { moderation_if_image and file_paths}")
                 
                 if moderation_if_image and file_paths:
                     # Отправка сообщения через WebSocket на фронт человеку
+                    logger.info(f"[handler] Отправка сообщения через WebSocket на фронт человеку")
                     channel_layer = get_channel_layer()
                     await channel_layer.group_send(
                         "telegram_group",
@@ -112,7 +116,8 @@ async def start_client():
                         },
                     )
                 else:
-                     await send_message_to_channels(modified_message, file_paths)   
+                    logger.info(f"[handler] Автоматическое перенаправление в канал")
+                    await send_message_to_channels(modified_message, file_paths)   
                 
 
         logger.info("[start_client] Обработчики NewMessage зарегистрированы для всех каналов")

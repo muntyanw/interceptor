@@ -147,7 +147,7 @@ API_HASH = "1f03c4f0e8617dd5fe4f16e9d629f47c"
 
 ASGI_APPLICATION = 'telegram_interceptor.asgi.application'
 
-REDISHOST = '172.18.17.107'
+REDISHOST = 'localhost'
 
 CHANNEL_LAYERS = {
     'default': {
@@ -161,5 +161,9 @@ CHANNEL_LAYERS = {
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# В Django settings.py
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+
 
 

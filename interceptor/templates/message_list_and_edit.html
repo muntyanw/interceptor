@@ -54,13 +54,13 @@
 
   <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <a href="{% url 'contacts_and_channels' %}" class="btn btn-info mb-3"
+        <div class="row" style="margin-top: 1em;">
+            <div class="col-md-2">
+                <a href="{% url 'contacts_and_channels' %}" class="btn btn-info mb-3" target="_blank"
                     >Просмотр ID контактов и каналов</a
                 >
             </div>
-        <div class="col-md-6">
+        <div class="col-md-2">
           <form method="post" action="{% url 'update_auto_send_setting' %}">
             {% csrf_token %}
             <div class="form-check">
@@ -86,7 +86,6 @@
       </div>
 
       <div class="row">
-        <h2 class="text-center my-4">Telegram Messages</h2>
         <div class="col-md-6">
               <div class="message-panel">
                 <div class="panel-title">Список сообщений</div>
@@ -131,7 +130,7 @@
         <!-- Панель для редактирования сообщения -->
         <div class="col-md-6">
           <div class="edit-panel" id="edit-panel">
-            <h2 class="panel-title">Редактирование сообщения</h2>
+            <h3 class="panel-title">Редактирование сообщения</h3>
             <form id="edit-form" method="post" enctype="multipart/form-data">
               {% csrf_token %}
               <div class="form-group">
