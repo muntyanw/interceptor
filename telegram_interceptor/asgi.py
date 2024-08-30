@@ -6,12 +6,14 @@ from channels.auth import AuthMiddlewareStack
 import interceptor.routing
 import logging
 
+logger = logging.getLogger(__name__)
+
+logger.info("[asgi] DJANGO_SETTINGS_MODULE := telegram_interceptor.settings")
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'telegram_interceptor.settings')
 
 # Инициализация Django перед использованием любых моделей или компонентов
+logger.info("[asgi] django.setup()")
 django.setup()
-
-logger = logging.getLogger(__name__)
 
 logger.info("[asgi] interceptor.routing.websocket_urlpatterns = {interceptor.routing.websocket_urlpatterns}")
 application = ProtocolTypeRouter({
