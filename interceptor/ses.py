@@ -7,7 +7,7 @@ import django
 from django.core.asgi import get_asgi_application
 from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.auth import AuthMiddlewareStack
-import interceptor.routing
+import routing
 
 
 api_id = 24364263
@@ -29,7 +29,7 @@ application = ProtocolTypeRouter({
     "http": get_asgi_application(),
     "websocket": AuthMiddlewareStack(
         URLRouter(
-            interceptor.routing.websocket_urlpatterns
+            routing.websocket_urlpatterns
         )
     ),
 })
