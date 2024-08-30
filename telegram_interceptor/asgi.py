@@ -15,7 +15,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'telegram_interceptor.settings')
 logger.info("[asgi] django.setup()")
 django.setup()
 
-logger.info("[asgi] interceptor.routing.websocket_urlpatterns = {URLRouter(interceptor.routing.websocket_urlpatterns)}")
+logger.info(f"[asgi] interceptor.routing.websocket_urlpatterns = {URLRouter(websocket_urlpatterns)}")
 application = ProtocolTypeRouter({
     "http": get_asgi_application(),
     "websocket": AuthMiddlewareStack(
