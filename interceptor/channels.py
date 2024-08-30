@@ -37,7 +37,7 @@ channels_to_listen = {
         }
     },
     1229342507: { #1363028986
-        'moderation_if_image': False,
+        'moderation_if_image': True,
         'replacements': {
             'ебнутый': 'ненормальный',
             'ХУЙЛ': 'дебил',
