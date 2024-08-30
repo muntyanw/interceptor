@@ -1,4 +1,3 @@
-------------------------------------------------------------------------------------------------------------------------------
 Запуск приложения:
 
 1. зайти в директорию 
@@ -10,7 +9,7 @@ source venv/bin/activate
 
 3. запустить сам скрипт
 uvicorn telegram_interceptor.asgi:application --host 0.0.0.0 --port 8000 --reload
-------------------------------------------------------------------------------------------------------------------------------
+
 Настройки:
 
 1. Каналы - файл \interceptor\channels.py
@@ -33,11 +32,10 @@ channels_to_listen = {
 2. Каналы в которые отсылаем 
 channels_to_send = ['@имя канала, контакта', '@secondcontact']
 
----------------------------------------------------------------------------------------------------------------------------
-
 Клонирование приложения
 
 cp -r /usr/share/nginx/html/interceptor /usr/share/nginx/html/interceptor2
+
 sudo nano /etc/nginx/sites-available/interceptor2
 
 в файл записать
@@ -66,11 +64,19 @@ server {
 
 sudo ln -s /etc/nginx/sites-available/interceptor2 /etc/nginx/sites-enabled/
 
+тут в коде изменить порт
+ // Подключение к WebSocket для приема сообщений в реальном времени
+        const chatSocket = new WebSocket(
+          "ws://" + window.location.host + ":8000/ws/telegram/"
+        );
 
 Запуск второго приложения
 
 cd /usr/share/nginx/html/interceptor2
 source venv/bin/activate
 uvicorn telegram_interceptor.asgi:application --host 127.0.0.1 --port 8002 --reload
+
+uvicorn telegram_interceptor.asgi:application --host 127.0.0.1 --port 8000
+
 
 
