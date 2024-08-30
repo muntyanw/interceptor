@@ -10,6 +10,7 @@ from .logger import logger
 from .models import AutoSendMessageSetting
 import re
 from telethon.errors import FloodWaitError
+from telethon.tl.types import PeerChannel
 
 # Создание клиента
 client = TelegramClient(ses.session, ses.api_id, ses.api_hash)
@@ -21,17 +22,18 @@ async def send_message_to_channels(message_text, files):
     await asyncio.sleep(1)
     
     for channel in channels.channels_to_send:
+        entity = await client.get_entity(PeerChannel(channel))
         try:
             if files:
                 for file in files:
                     logger.info(
                         f"[send_message_to_channels] Отправка файла в канал: {channel}, файл: {file}"
                     )
-                    await client.send_file(channel, file, caption=message_text)
+                    await client.send_file(entity, file, caption=message_text)
                     message_text = ""  # Reset message text to avoid repeated captions
             else:
                 logger.info(f"[send_message_to_channels] Отправка сообщения в канал: {channel}")
-                await client.send_message(channel, message_text)
+                await client.send_message(entity, message_text)
         except FloodWaitError as e:
             logger.warning(f"[send_message_to_channels] FloodWaitError: {e}. Ожидание {e.seconds} секунд.")
             await asyncio.sleep(e.seconds)  # Wait for the required time before retrying
