@@ -9,6 +9,7 @@ from channels.layers import get_channel_layer  # для работы с WebSocke
 from .logger import logger
 from .models import AutoSendMessageSetting
 import re
+from telethon.errors import FloodWaitError
 
 # Создание клиента
 client = TelegramClient(ses.session, ses.api_id, ses.api_hash)
@@ -18,17 +19,26 @@ async def send_message_to_channels(message_text, files):
         f"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}"
     )
     await asyncio.sleep(1)
+    
     for channel in channels.channels_to_send:
-        if files:
-            for file in files:
-                logger.info(
-                    f"[send_message_to_channels] Отправка файла в канал: {channel}, файл: {file}"
-                )
-                await client.send_file(channel, file, caption=message_text)
-                message_text = ""  # Reset message text to avoid repeated captions
-        else:
-            logger.info(f"[send_message_to_channels] Отправка сообщения в канал: {channel}")
-            await client.send_message(channel, message_text)
+        try:
+            if files:
+                for file in files:
+                    logger.info(
+                        f"[send_message_to_channels] Отправка файла в канал: {channel}, файл: {file}"
+                    )
+                    await client.send_file(channel, file, caption=message_text)
+                    message_text = ""  # Reset message text to avoid repeated captions
+            else:
+                logger.info(f"[send_message_to_channels] Отправка сообщения в канал: {channel}")
+                await client.send_message(channel, message_text)
+        except FloodWaitError as e:
+            logger.warning(f"[send_message_to_channels] FloodWaitError: {e}. Ожидание {e.seconds} секунд.")
+            await asyncio.sleep(e.seconds)  # Wait for the required time before retrying
+        except Exception as e:
+            logger.error(f"[send_message_to_channels] Ошибка при отправке сообщения: {e}")
+
+    logger.info("[send_message_to_channels] Завершение отправки сообщений и файлов.")
             
 def replace_words(text, channel_id):
     channel_info = channels.channels_to_listen.get(channel_id, {})
