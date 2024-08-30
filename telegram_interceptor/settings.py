@@ -162,4 +162,8 @@ CHANNEL_LAYERS = {
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# В Django settings.py
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+
+
 
