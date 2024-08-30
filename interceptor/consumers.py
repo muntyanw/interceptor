@@ -23,39 +23,45 @@ class TelegramConsumer(AsyncWebsocketConsumer):
 
 
     async def receive(self, text_data):
-        data = json.loads(text_data)
-        message_text = data.get("new_text", "")
-        new_files = data.get("new_files", [])
-        existing_files = data.get("existing_files", [])
+        try:
+            data = json.loads(text_data)
+            message_text = data.get("new_text", "")
+            new_files = data.get("new_files", [])
+            existing_files = data.get("existing_files", [])
 
-        files = []
+            files = []
 
-        # Обработка новых файлов и их сохранение на диск
-        for file in new_files:
-            file_name = file.get("name")
-            file_data = file.get("data").split(",")[
-                1
-            ]  # Убираем префикс 'data:image/jpeg;base64,'
-            file_bytes = base64.b64decode(file_data)
+            # Обработка новых файлов и их сохранение на диск
+            for file in new_files:
+                file_name = file.get("name")
+                file_data = file.get("data").split(",")[
+                    1
+                ]  # Убираем префикс 'data:image/jpeg;base64,'
+                file_bytes = base64.b64decode(file_data)
 
-            # Сохраняем файл на диск
-            folder_temp_path = "/tmp"
-            if not os.path.exists(folder_temp_path):
-                os.makedirs(folder_temp_path)
-                print(f"Папка {folder_temp_path} создана.")
-            else:
-                print(f"Папка {folder_temp_path} уже существует.")
-            file_path = os.path.join(folder_temp_path, file_name)
-            with open(file_path, "wb") as f:
-                f.write(file_bytes)
-            files.append(file_path)
+                # Сохраняем файл на диск
+                folder_temp_path = "/tmp"
+                if not os.path.exists(folder_temp_path):
+                    os.makedirs(folder_temp_path)
+                    print(f"Папка {folder_temp_path} создана.")
+                else:
+                    print(f"Папка {folder_temp_path} уже существует.")
+                file_path = os.path.join(folder_temp_path, file_name)
+                with open(file_path, "wb") as f:
+                    f.write(file_bytes)
+                files.append(file_path)
 
-        # Обработка существующих файлов
-        for file_url in existing_files:
-            files.append(file_url)
+            # Обработка существующих файлов
+            for file_url in existing_files:
+                files.append(file_url)
 
-        await send_message_to_channels(message_text, files)
-       
+            await send_message_to_channels(message_text, files)
+        except json.JSONDecodeError:
+            # Логирование ошибки или отправка сообщения об ошибке
+            logger.info("[TelegramConsumer] Invalid JSON received")
+            await self.send(text_data=json.dumps({
+                'error': 'Invalid JSON received'
+            }))
 
     async def send_new_message(self, event):
         # pdb.set_trace()
