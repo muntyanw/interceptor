@@ -1,3 +1,18 @@
+Креды
+SSH server information
+IP address: 199.80.55.18
+Username: root
+Password: 0fD9rm5T3KB2vEl
+
+ssh root@199.80.55.18
+
+inter@199.80.55.18
+B32Xi7ruM3
+
+mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '!A3z5puU68G*';
+
+
 Запуск приложения:
 
 1. зайти в директорию 
@@ -13,6 +28,23 @@ uvicorn telegram_interceptor.asgi:application --host 0.0.0.0 --port 8000 --reloa
 или одной командой
 /usr/share/nginx/html/interceptor/start.sh
 
+если будут траблы с правами то
+sudo chmod +x /usr/share/nginx/html/interceptor/start.sh
+
+--------------------------------------------------------------------------------------
+запуск без завершения приложения при закрытии терминала
+screen
+/usr/share/nginx/html/interceptor/start.sh
+Для выхода из сессии, не завершая процессы:
+
+Нажмите Ctrl + A, затем D (отсоединиться от сессии).
+Закройте терминал или выйдите из SSH.
+Вернуться к сессии screen можно с помощью команды:
+
+bash
+Копировать код
+screen -r
+---------------------------------------------------------------------------------------
 
 Настройки:
 
