@@ -19,13 +19,16 @@ import os
 
 
 # View для работы с сообщениями и их пересылки
+ 
 async def message_list_and_edit(request, edit_pk=None):
+    logger.info("[message_list_and_edit] View для работы с сообщениями и их пересылки.")
     session_name = ses.session_name
     session_string = ses.load_session(session_name)
     telethon_client_task_running = cache.get('telethon_client_task_running')
 
     client = TelegramClient(StringSession(session_string), ses.api_id, ses.api_hash)
     await client.connect()
+    logger.info("[message_list_and_edit] client.connect")
     if not await client.is_user_authorized() or not telethon_client_task_running:
         return redirect("/")
 
