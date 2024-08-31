@@ -1,15 +1,15 @@
 #каналы которые слушаем#
 channels_to_listen = {
-    # 4593819858: { #InterTest2
-    #     'moderation_if_image': True,
-    #     'auto_send_text_message': True,
-    #     'replacements': { 
-    #         'слово1': 'замена1', #что на что меняем#
-    #         'слово2': 'замена2',
-    #         'слово3': 'замена3',
-    #         'слово4': 'замена4',
-    #     }
-    # },
+    4593819858: { #InterTest2
+        'moderation_if_image': True,
+        'auto_send_text_message': True,
+        'replacements': { 
+            'слово1': 'замена1', #что на что меняем#
+            'слово2': 'замена2',
+            'слово3': 'замена3',
+            'слово4': 'замена4',
+        }
+    },
     # 2204843457: {#InterTest
     #     'moderation_if_image': True,
     #     'auto_send_text_message': True,
@@ -64,7 +64,7 @@ channels_to_listen = {
     # },
     2023070684: { #Crypto Master | Futures Signals
         'moderation_if_image': False,
-        'auto_send_text_message': True,
+        'auto_send_text_message': True, #если это значение труе то будет производить автозамену и отсылать, если фэлз будет делать автозамену и отсылать на сайт человеку
         'replacements': {
             'bingx.com': 'ссылка на мой сайт',
             '@SamCrypto_Master': '@мойник',

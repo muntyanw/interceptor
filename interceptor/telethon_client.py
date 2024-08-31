@@ -56,7 +56,7 @@ async def send_message_to_channels(message_text, files):
                     message_text = ""  # Сброс текста сообщения, чтобы он не повторялся
             else:
                 logger.info(f"[send_message_to_channels] Отправка сообщения в канал: {channel}")
-                await client.send_message(entity, message_text)
+                await client.send_message(entity, message_text, parse_mode='HTML')
         except FloodWaitError as e:
             logger.warning(f"[send_message_to_channels] FloodWaitError: {e}. Ожидание {e.seconds} секунд.")
             await asyncio.sleep(e.seconds)  # Ожидание перед повторной отправкой
