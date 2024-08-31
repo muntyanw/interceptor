@@ -11,37 +11,60 @@ from .models import AutoSendMessageSetting
 import re
 from telethon.errors import FloodWaitError
 from telethon.tl.types import PeerChannel
+from collections import deque
+import hashlib
+
+# Ограничение на количество хранимых сообщений
+MAX_SENT_MESSAGES = 100
+sent_messages = deque(maxlen=MAX_SENT_MESSAGES)  # Очередь с ограничением размера
+
+def hash_file(file_path):
+    """Вычисляет хэш для файла по его содержимому."""
+    hasher = hashlib.sha256()
+    with open(file_path, 'rb') as f:
+        buf = f.read()
+        hasher.update(buf)
+    return hasher.hexdigest()
 
 # Создание клиента
 client = TelegramClient(ses.session, ses.api_id, ses.api_hash)
 
 async def send_message_to_channels(message_text, files):
-    logger.info(
-        f"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}"
-    )
+    logger.info(f"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}")
     await asyncio.sleep(1)
-    
+
+    # Создаем уникальный идентификатор сообщения/файла
+    unique_id = message_text if message_text else ""
+    if files:
+        for file in files:
+            unique_id += hash_file(file)  # Добавляем хэш файла к идентификатору
+
+    if unique_id in sent_messages:
+        logger.warning("[send_message_to_channels] Сообщение или файл уже были отправлены, пропуск отправки.")
+        return
+
+    sent_messages.append(unique_id)  # Добавление уникального идентификатора в очередь
+
     for channel in channels.channels_to_send:
         entity = await client.get_entity(PeerChannel(channel))
         try:
             if files:
                 for file in files:
-                    logger.info(
-                        f"[send_message_to_channels] Отправка файла в канал: {channel}, файл: {file}"
-                    )
+                    logger.info(f"[send_message_to_channels] Отправка файла в канал: {channel}, файл: {file}")
                     await client.send_file(entity, file, caption=message_text)
-                    message_text = ""  # Reset message text to avoid repeated captions
+                    message_text = ""  # Сброс текста сообщения, чтобы он не повторялся
             else:
                 logger.info(f"[send_message_to_channels] Отправка сообщения в канал: {channel}")
                 await client.send_message(entity, message_text)
         except FloodWaitError as e:
             logger.warning(f"[send_message_to_channels] FloodWaitError: {e}. Ожидание {e.seconds} секунд.")
-            await asyncio.sleep(e.seconds)  # Wait for the required time before retrying
+            await asyncio.sleep(e.seconds)  # Ожидание перед повторной отправкой
         except Exception as e:
             logger.error(f"[send_message_to_channels] Ошибка при отправке сообщения: {e}")
 
     logger.info("[send_message_to_channels] Завершение отправки сообщений и файлов.")
-            
+    
+    
 def replace_words(text, channel_id):
     channel_info = channels.channels_to_listen.get(channel_id, {})
     replacements = channel_info.get('replacements', {})

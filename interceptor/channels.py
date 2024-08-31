@@ -57,7 +57,7 @@ channels_to_listen = {
     #         'блядина': 'гуляща',
     #     },
     # },
-    2023070684: { 
+    2023070684: { #Crypto Master | Futures Signals
         'moderation_if_image': True,
         'replacements': {
             'bingx.com': 'ссылка на мой сайт',
