@@ -15,6 +15,8 @@ from collections import deque
 import hashlib
 import time
 
+handler_registered = False
+
 # Ограничение на количество хранимых сообщений
 MAX_SENT_MESSAGES = 30
 sent_messages = deque(maxlen=MAX_SENT_MESSAGES)  # Очередь с ограничением размера
@@ -99,6 +101,9 @@ def extract_original_id(chat_id):
     return abs(chat_id)  # Возвращаем оригинальный chat_id, если префикс отсутствует
 
 async def start_client():
+    
+    global handler_registered
+    
     download_directory = "storage/"
     if not os.path.exists(download_directory):
         os.makedirs(download_directory)
@@ -118,44 +123,47 @@ async def start_client():
 
             chat_ids = list(channels.channels_to_listen.keys())
 
-            @client.on(events.NewMessage(chats=chat_ids))
-            async def handler(event):
-                chat_id = extract_original_id(event.chat_id)
-                sender = await event.get_sender()
-                sender_name = getattr(sender, 'first_name', 'Unknown') if hasattr(sender, 'first_name') else getattr(sender, 'title', 'Unknown')
-                file_paths = []
+             # Регистрируем обработчик, если он еще не был зарегистрирован
+            if not handler_registered:
+                @client.on(events.NewMessage(chats=chat_ids))
+                async def handler(event):
+                    chat_id = extract_original_id(event.chat_id)
+                    sender = await event.get_sender()
+                    sender_name = getattr(sender, 'first_name', 'Unknown') if hasattr(sender, 'first_name') else getattr(sender, 'title', 'Unknown')
+                    file_paths = []
 
-                if event.message.media:
-                    file_path = await event.message.download_media(file=download_directory)
-                    file_paths.append(file_path)
-                    logger.info(f"[handler] Файл загружен: {file_path} из канала {event.chat_id}")
+                    if event.message.media:
+                        file_path = await event.message.download_media(file=download_directory)
+                        file_paths.append(file_path)
+                        logger.info(f"[handler] Файл загружен: {file_path} из канала {event.chat_id}")
 
-                message = event.message.message if event.message else "No message"
-                logger.info(f"[handler] Сообщение из канала {event.chat_id}: {message}, Отправитель: {sender_name}, Файлы: {file_paths}")
+                    message = event.message.message if event.message else "No message"
+                    logger.info(f"[handler] Сообщение из канала {event.chat_id}: {message}, Отправитель: {sender_name}, Файлы: {file_paths}")
 
-                setting = await sync_to_async(AutoSendMessageSetting.objects.first)()
-                if setting and setting.is_enabled:
-                    await send_message_to_channels(message, file_paths)
-                else:
-                    modified_message, moderation_if_image, auto_send_text_message = replace_words(message, chat_id)
-                    logger.error(f"[handler] moderation_if_image: {moderation_if_image}, file_paths: {file_paths}, moderation_if_image and file_paths: {moderation_if_image and file_paths}")
-
-                    if (moderation_if_image and file_paths) or not auto_send_text_message:
-                        logger.info(f"[handler] Отправка сообщения через WebSocket на фронт человеку")
-                        channel_layer = get_channel_layer()
-                        await channel_layer.group_send(
-                            "telegram_group",
-                            {
-                                "type": "send_new_message",
-                                "message": modified_message,
-                                "files": file_paths,
-                            },
-                        )
+                    setting = await sync_to_async(AutoSendMessageSetting.objects.first)()
+                    if setting and setting.is_enabled:
+                        await send_message_to_channels(message, file_paths)
                     else:
-                        logger.info(f"[handler] Автоматическое перенаправление в канал")
-                        await send_message_to_channels(modified_message, file_paths)
+                        modified_message, moderation_if_image, auto_send_text_message = replace_words(message, chat_id)
+                        logger.error(f"[handler] moderation_if_image: {moderation_if_image}, file_paths: {file_paths}, moderation_if_image and file_paths: {moderation_if_image and file_paths}")
 
-            logger.info("[start_client] Обработчики NewMessage зарегистрированы для всех каналов")
+                        if (moderation_if_image and file_paths) or not auto_send_text_message:
+                            logger.info(f"[handler] Отправка сообщения через WebSocket на фронт человеку")
+                            channel_layer = get_channel_layer()
+                            await channel_layer.group_send(
+                                "telegram_group",
+                                {
+                                    "type": "send_new_message",
+                                    "message": modified_message,
+                                    "files": file_paths,
+                                },
+                            )
+                        else:
+                            logger.info(f"[handler] Автоматическое перенаправление в канал")
+                            await send_message_to_channels(modified_message, file_paths)
+
+                logger.info("[start_client] Обработчики NewMessage зарегистрированы для всех каналов")
+                handler_registered = True
             await client.run_until_disconnected()
             break  # Выход из цикла попыток при успешном подключении
 
