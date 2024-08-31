@@ -36,7 +36,7 @@ channels_to_listen = {
     #         'слово4': 'замена4',
     #     }
     # },
-    # 1229342507: { #1363028986
+    # 1229342507: { #КЛИЕНТЫ || РАБОТА ОНЛАЙН
     #     'moderation_if_image': True,
     #     'replacements': {
     #         'ебнутый': 'ненормальный',
@@ -58,7 +58,7 @@ channels_to_listen = {
     #     },
     # },
     2023070684: { #Crypto Master | Futures Signals
-        'moderation_if_image': True,
+        'moderation_if_image': False,
         'replacements': {
             'bingx.com': 'ссылка на мой сайт',
             '@SamCrypto_Master': '@мойник',
