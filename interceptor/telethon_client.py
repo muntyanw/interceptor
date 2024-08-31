@@ -13,6 +13,7 @@ from telethon.errors import FloodWaitError
 from telethon.tl.types import PeerChannel
 from collections import deque
 import hashlib
+import time
 
 # Ограничение на количество хранимых сообщений
 MAX_SENT_MESSAGES = 100
@@ -99,67 +100,70 @@ async def start_client():
     if not os.path.exists(download_directory):
         os.makedirs(download_directory)
 
-    try:
-        await client.connect()
-        if not await client.is_user_authorized():
-            logger.info("[start_client] Клиент не авторизован, завершаем процесс")
-            return
+    max_retries = 5
+    delay = 10  # Задержка между попытками в секундах
 
-        ses.save_session(ses.session_name, client.session.save())
-        logger.info("[start_client] Клиент Telethon успешно подключен и авторизован")
+    for attempt in range(max_retries):
+        try:
+            await client.connect()
+            if not await client.is_user_authorized():
+                logger.info("[start_client] Клиент не авторизован, завершаем процесс")
+                return
 
-        # Assuming channels.channels_to_listen is a dictionary where keys are chat identifiers
-        chat_ids = list(channels.channels_to_listen.keys())  # Convert dict_keys to a list
+            ses.save_session(ses.session_name, client.session.save())
+            logger.info("[start_client] Клиент Telethon успешно подключен и авторизован")
 
-        # You may need to convert chat identifiers from strings or usernames to numeric IDs or InputPeers:
-        #resolved_chats = await asyncio.gather(*(client.get_input_entity(chat_id) for chat_id in chat_ids))
+            chat_ids = list(channels.channels_to_listen.keys())
 
+            @client.on(events.NewMessage(chats=chat_ids))
+            async def handler(event):
+                chat_id = extract_original_id(event.chat_id)
+                sender = await event.get_sender()
+                sender_name = getattr(sender, 'first_name', 'Unknown') if hasattr(sender, 'first_name') else getattr(sender, 'title', 'Unknown')
+                file_paths = []
 
-        @client.on(events.NewMessage(chats=chat_ids))
-        async def handler(event):
-            chat_id = extract_original_id(event.chat_id)
-            sender = await event.get_sender()
-            sender_name = getattr(sender, 'first_name', 'Unknown') if hasattr(sender, 'first_name') else getattr(sender, 'title', 'Unknown')
-            file_paths = []
+                if event.message.media:
+                    file_path = await event.message.download_media(file=download_directory)
+                    file_paths.append(file_path)
+                    logger.info(f"[handler] Файл загружен: {file_path} из канала {event.chat_id}")
 
-            if event.message.media:
-                file_path = await event.message.download_media(file=download_directory)
-                file_paths.append(file_path)
-                logger.info(f"[handler] Файл загружен: {file_path} из канала {event.chat_id}")
+                message = event.message.message if event.message else "No message"
+                logger.info(f"[handler] Сообщение из канала {event.chat_id}: {message}, Отправитель: {sender_name}, Файлы: {file_paths}")
 
-            message = event.message.message if event.message else "No message"
-            logger.info(f"[handler] Сообщение из канала {event.chat_id}: {message}, Отправитель: {sender_name}, Файлы: {file_paths}")
-
-            setting = await sync_to_async(AutoSendMessageSetting.objects.first)()
-            if setting and setting.is_enabled:
-                await send_message_to_channels(message, file_paths)
-                #await sync_to_async(setting.save)()
-            else:
-                modified_message, moderation_if_image = replace_words(message, chat_id)
-                logger.error(f"[handler] moderation_if_image: {moderation_if_image}, file_paths: {file_paths},  moderation_if_image and file_paths: { moderation_if_image and file_paths}")
-                
-                if moderation_if_image and file_paths:
-                    # Отправка сообщения через WebSocket на фронт человеку
-                    logger.info(f"[handler] Отправка сообщения через WebSocket на фронт человеку")
-                    channel_layer = get_channel_layer()
-                    await channel_layer.group_send(
-                        "telegram_group",
-                        {
-                            "type": "send_new_message",
-                            "message": modified_message,
-                            "files": file_paths,
-                        },
-                    )
+                setting = await sync_to_async(AutoSendMessageSetting.objects.first)()
+                if setting and setting.is_enabled:
+                    await send_message_to_channels(message, file_paths)
                 else:
-                    logger.info(f"[handler] Автоматическое перенаправление в канал")
-                    await send_message_to_channels(modified_message, file_paths)   
-                
+                    modified_message, moderation_if_image = replace_words(message, chat_id)
+                    logger.error(f"[handler] moderation_if_image: {moderation_if_image}, file_paths: {file_paths}, moderation_if_image and file_paths: {moderation_if_image and file_paths}")
 
-        logger.info("[start_client] Обработчики NewMessage зарегистрированы для всех каналов")
-        await client.run_until_disconnected()
-    except Exception as e:
-        logger.error(f"[start_client] Ошибка при подключении клиента Telethon: {e}")
-        raise
+                    if moderation_if_image and file_paths:
+                        logger.info(f"[handler] Отправка сообщения через WebSocket на фронт человеку")
+                        channel_layer = get_channel_layer()
+                        await channel_layer.group_send(
+                            "telegram_group",
+                            {
+                                "type": "send_new_message",
+                                "message": modified_message,
+                                "files": file_paths,
+                            },
+                        )
+                    else:
+                        logger.info(f"[handler] Автоматическое перенаправление в канал")
+                        await send_message_to_channels(modified_message, file_paths)
+
+            logger.info("[start_client] Обработчики NewMessage зарегистрированы для всех каналов")
+            await client.run_until_disconnected()
+            break  # Выход из цикла попыток при успешном подключении
+
+        except Exception as e:
+            logger.error(f"[start_client] Ошибка при подключении клиента Telethon: {e}")
+            if attempt < max_retries - 1:
+                logger.info(f"Попытка повторного подключения через {delay} секунд... ({attempt + 1}/{max_retries})")
+                time.sleep(delay)
+            else:
+                logger.error("Превышено максимальное количество попыток подключения.")
+                raise
 
 async def main():
     logger.info("[main] Запуск основного процесса")
