@@ -179,4 +179,9 @@ async def start_client():
                 logger.error("Превышено максимальное количество попыток подключения.")
                 raise
 
+async def main():
+    logger.info("[main] Запуск основного процесса")
+    await start_client()
 
+
+asyncio.run(main())
