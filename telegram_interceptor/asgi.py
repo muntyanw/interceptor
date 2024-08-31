@@ -5,7 +5,7 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.auth import AuthMiddlewareStack
 from  interceptor.routing import websocket_urlpatterns
 import logging
-from . import ses
+from interceptor.ses import session_name, load_session, api_id, api_hash
 from telethon import TelegramClient, errors
 from telethon.sessions import StringSession
 
@@ -30,9 +30,9 @@ application = ProtocolTypeRouter({
 })
 
 logger.info("[asgi] коннект клиента телеграмма")
-session_name = ses.session_name
-session_string = ses.load_session(session_name)
-client = TelegramClient(StringSession(session_string), ses.api_id, ses.api_hash)
+session_name = session_name
+session_string = load_session(session_name)
+client = TelegramClient(StringSession(session_string), api_id, api_hash)
 client.connect()
 logger.info("[asgi] попытка client.connect")
 #if not await client.is_user_authorized()
