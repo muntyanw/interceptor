@@ -82,8 +82,11 @@ def replace_words(text, channel_id):
     pattern = r'\b\w+\b'
     modified_text = re.sub(pattern, replace_match, text)
     moderation_if_image = channel_info.get('moderation_if_image', False)
+    auto_send_text_message = channel_info.get('auto_send_text_message', False)
+    
     logger.info(f"[replace_words]  moderation_if_image = {moderation_if_image}")
-    return modified_text, moderation_if_image
+    logger.info(f"[replace_words]  auto_send_text_message = {auto_send_text_message}")
+    return modified_text, moderation_if_image, auto_send_text_message
 
 def extract_original_id(chat_id):
     # Преобразовываем chat_id в строку для удобства обработки
@@ -134,10 +137,10 @@ async def start_client():
                 if setting and setting.is_enabled:
                     await send_message_to_channels(message, file_paths)
                 else:
-                    modified_message, moderation_if_image = replace_words(message, chat_id)
+                    modified_message, moderation_if_image, auto_send_text_message = replace_words(message, chat_id)
                     logger.error(f"[handler] moderation_if_image: {moderation_if_image}, file_paths: {file_paths}, moderation_if_image and file_paths: {moderation_if_image and file_paths}")
 
-                    if moderation_if_image and file_paths:
+                    if (moderation_if_image and file_paths) or not auto_send_text_message:
                         logger.info(f"[handler] Отправка сообщения через WebSocket на фронт человеку")
                         channel_layer = get_channel_layer()
                         await channel_layer.group_send(
