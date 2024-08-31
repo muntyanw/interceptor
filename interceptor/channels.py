@@ -30,16 +30,16 @@ channels_to_listen = {
     #         'слово4': 'замена4',
     #     }
     # },
-    # 4517954004: {#InterTest
-    #     'moderation_if_image': True,
-    #     'auto_send_text_message': True,
-    #     'replacements': {
-    #         'слово1': 'замена1',
-    #         'слово2': 'замена2',
-    #         'слово3': 'замена3',
-    #         'слово4': 'замена4',
-    #     }
-    # },
+    4517954004: {#InterTest
+        'moderation_if_image': True,
+        'auto_send_text_message': True,
+        'replacements': {
+            'слово1': 'замена1',
+            'слово2': 'замена2',
+            'слово3': 'замена3',
+            'слово4': 'замена4',
+        }
+    },
     # 1229342507: { #КЛИЕНТЫ || РАБОТА ОНЛАЙН
     #     'moderation_if_image': True,
     #     'auto_send_text_message': True,
