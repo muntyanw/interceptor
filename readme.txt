@@ -50,6 +50,9 @@ screen -r
 Настройки:
 
 1. Каналы - файл \interceptor\channels.py
+
+nano /usr/share/nginx/html/interceptor/interceptor/channels.py
+
 для каждого канала который слушаем есть такая структура 
 
 channels_to_listen = {
