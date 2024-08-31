@@ -16,7 +16,7 @@ import hashlib
 import time
 
 # Ограничение на количество хранимых сообщений
-MAX_SENT_MESSAGES = 100
+MAX_SENT_MESSAGES = 30
 sent_messages = deque(maxlen=MAX_SENT_MESSAGES)  # Очередь с ограничением размера
 
 def hash_file(file_path):
