@@ -183,5 +183,5 @@ async def main():
     logger.info("[main] Запуск основного процесса")
     await start_client()
 
-
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
