@@ -332,7 +332,10 @@
         $(document).on("click", ".send-button", function (event) {
           event.preventDefault();
 
-          var messageItem = $(this).closest(".message-item");
+          var $button = $(this); // Сохранение ссылки на кнопку
+          $button.prop("disabled", true); // Отключение кнопки
+
+          var messageItem = $button.closest(".message-item");
 
           var existingFiles = [];
           messageItem.find(".file-list li").each(function () {
@@ -351,8 +354,11 @@
           };
 
           chatSocket.send(JSON.stringify(sendData));
+
+          // (Optional) Вы можете снова активировать кнопку после отправки, если необходимо:
+          // $button.prop("disabled", false);
         });
-      });
+
     </script>
   </body>
 </html>
