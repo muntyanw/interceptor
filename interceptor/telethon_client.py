@@ -113,18 +113,19 @@ async def start_client():
 
     for attempt in range(max_retries):
         try:
-            await client.connect()
-            if not await client.is_user_authorized():
-                logger.info("[start_client] Клиент не авторизован, завершаем процесс")
-                return
-
-            ses.save_session(ses.session_name, client.session.save())
-            logger.info("[start_client] Клиент Telethon успешно подключен и авторизован")
-
-            chat_ids = list(channels.channels_to_listen.keys())
-
              # Регистрируем обработчик, если он еще не был зарегистрирован
             if not handler_registered:
+                
+                await client.connect()
+                if not await client.is_user_authorized():
+                    logger.info("[start_client] Клиент не авторизован, завершаем процесс")
+                    return
+
+                ses.save_session(ses.session_name, client.session.save())
+                logger.info("[start_client] Клиент Telethon успешно подключен и авторизован")
+
+                chat_ids = list(channels.channels_to_listen.keys())
+            
                 @client.on(events.NewMessage(chats=chat_ids))
                 async def handler(event):
                     chat_id = extract_original_id(event.chat_id)
@@ -164,8 +165,10 @@ async def start_client():
 
                 logger.info("[start_client] Обработчики NewMessage зарегистрированы для всех каналов")
                 handler_registered = True
-            await client.run_until_disconnected()
-            break  # Выход из цикла попыток при успешном подключении
+                await client.run_until_disconnected()
+                break  # Выход из цикла попыток при успешном подключении
+            else:
+                logger.info("[start_client] Обработчики NewMessage уже были зарегестрированы")
 
         except Exception as e:
             logger.error(f"[start_client] Ошибка при подключении клиента Telethon: {e}")
