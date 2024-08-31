@@ -15,7 +15,14 @@ from django.core.cache import cache
 from .logger import logger
 from .models import AutoSendMessageSetting
 from django.shortcuts import redirect
+import sys
 
+
+def get_port_from_args():
+    for arg in sys.argv:
+        if arg.startswith("--port="):
+            return int(arg.split("=")[1])
+    return 100  # Значение по умолчанию
 
 # View для работы с сообщениями и их пересылки
 async def message_list_and_edit(request, edit_pk=None):
@@ -40,6 +47,8 @@ async def message_list_and_edit(request, edit_pk=None):
         return redirect("message_list_and_edit")
 
     setting = await sync_to_async(AutoSendMessageSetting.objects.first)()
+    
+    port = get_port_from_args()
 
     return await sync_to_async(render)(
         request,
@@ -47,7 +56,8 @@ async def message_list_and_edit(request, edit_pk=None):
         {
             "messages": messages,
             "edit_message": edit_message,
-            "setting": setting
+            "setting": setting,
+            "port": port
         },
     )
 
