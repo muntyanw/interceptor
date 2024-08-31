@@ -25,7 +25,8 @@ source venv/bin/activate
 1 и 2 делается один раз при открытии терминала
 
 3. запустить сам скрипт
-uvicorn telegram_interceptor.asgi:application --host 0.0.0.0 --port 8000 --reload
+export PORT=8000
+uvicorn telegram_interceptor.asgi:application --host 0.0.0.0 --port $PORT
 
 или это все делается одной командой
 /usr/share/nginx/html/interceptor/start.sh
