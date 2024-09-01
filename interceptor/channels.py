@@ -1,5 +1,5 @@
-api_id = 25965329 #24364263
-api_hash = "6604012087bc1273f1f918571c02af24" #"1f03c4f0e8617dd5fe4f16e9d629f47c"
+api_id = 24364263  #25965329
+api_hash = "1f03c4f0e8617dd5fe4f16e9d629f47c" #"6604012087bc1273f1f918571c02af24"
 
 #каналы которые слушаем#
 channels_to_listen = {
