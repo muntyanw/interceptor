@@ -165,6 +165,103 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "django",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django",
+        "description": "django",
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "ProtocolTypeRouter",
+        "importPath": "channels.routing",
+        "description": "channels.routing",
+        "isExtraImport": true,
+        "detail": "channels.routing",
+        "documentation": {}
+    },
+    {
+        "label": "URLRouter",
+        "importPath": "channels.routing",
+        "description": "channels.routing",
+        "isExtraImport": true,
+        "detail": "channels.routing",
+        "documentation": {}
+    },
+    {
+        "label": "ProtocolTypeRouter",
+        "importPath": "channels.routing",
+        "description": "channels.routing",
+        "isExtraImport": true,
+        "detail": "channels.routing",
+        "documentation": {}
+    },
+    {
+        "label": "URLRouter",
+        "importPath": "channels.routing",
+        "description": "channels.routing",
+        "isExtraImport": true,
+        "detail": "channels.routing",
+        "documentation": {}
+    },
+    {
+        "label": "AuthMiddlewareStack",
+        "importPath": "channels.auth",
+        "description": "channels.auth",
+        "isExtraImport": true,
+        "detail": "channels.auth",
+        "documentation": {}
+    },
+    {
+        "label": "AuthMiddlewareStack",
+        "importPath": "channels.auth",
+        "description": "channels.auth",
+        "isExtraImport": true,
+        "detail": "channels.auth",
+        "documentation": {}
+    },
+    {
         "label": "sync_to_async",
         "importPath": "asgiref.sync",
         "description": "asgiref.sync",
@@ -247,6 +344,56 @@
         "documentation": {}
     },
     {
+        "label": "FloodWaitError",
+        "importPath": "telethon.errors",
+        "description": "telethon.errors",
+        "isExtraImport": true,
+        "detail": "telethon.errors",
+        "documentation": {}
+    },
+    {
+        "label": "FloodWaitError",
+        "importPath": "telethon.errors",
+        "description": "telethon.errors",
+        "isExtraImport": true,
+        "detail": "telethon.errors",
+        "documentation": {}
+    },
+    {
+        "label": "PeerChannel",
+        "importPath": "telethon.tl.types",
+        "description": "telethon.tl.types",
+        "isExtraImport": true,
+        "detail": "telethon.tl.types",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
@@ -287,22 +434,6 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
         "label": "JsonResponse",
         "importPath": "django.http",
         "description": "django.http",
@@ -328,60 +459,11 @@
         "documentation": {}
     },
     {
-        "label": "FloodWaitError",
-        "importPath": "telethon.errors",
-        "description": "telethon.errors",
-        "isExtraImport": true,
-        "detail": "telethon.errors",
-        "documentation": {}
-    },
-    {
         "label": "cache",
         "importPath": "django.core.cache",
         "description": "django.core.cache",
         "isExtraImport": true,
         "detail": "django.core.cache",
-        "documentation": {}
-    },
-    {
-        "label": "django",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django",
-        "description": "django",
-        "detail": "django",
-        "documentation": {}
-    },
-    {
-        "label": "ProtocolTypeRouter",
-        "importPath": "channels.routing",
-        "description": "channels.routing",
-        "isExtraImport": true,
-        "detail": "channels.routing",
-        "documentation": {}
-    },
-    {
-        "label": "URLRouter",
-        "importPath": "channels.routing",
-        "description": "channels.routing",
-        "isExtraImport": true,
-        "detail": "channels.routing",
-        "documentation": {}
-    },
-    {
-        "label": "AuthMiddlewareStack",
-        "importPath": "channels.auth",
-        "description": "channels.auth",
-        "isExtraImport": true,
-        "detail": "channels.auth",
-        "documentation": {}
-    },
-    {
-        "label": "get_asgi_application",
-        "importPath": "django.core.asgi",
-        "description": "django.core.asgi",
-        "isExtraImport": true,
-        "detail": "django.core.asgi",
         "documentation": {}
     },
     {
@@ -488,11 +570,29 @@
         "documentation": {}
     },
     {
+        "label": "api_id",
+        "kind": 5,
+        "importPath": "interceptor.channels",
+        "description": "interceptor.channels",
+        "peekOfCode": "api_id = 24364263  #25965329\napi_hash = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" #\"6604012087bc1273f1f918571c02af24\"\n#каналы которые слушаем#\nchannels_to_listen = {\n    4593819858: { #InterTest2\n        'moderation_if_image': True,\n        'auto_send_text_message': True,\n        'replacements': { \n            'слово1': 'замена1', #что на что меняем#\n            'слово2': 'замена2',",
+        "detail": "interceptor.channels",
+        "documentation": {}
+    },
+    {
+        "label": "api_hash",
+        "kind": 5,
+        "importPath": "interceptor.channels",
+        "description": "interceptor.channels",
+        "peekOfCode": "api_hash = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" #\"6604012087bc1273f1f918571c02af24\"\n#каналы которые слушаем#\nchannels_to_listen = {\n    4593819858: { #InterTest2\n        'moderation_if_image': True,\n        'auto_send_text_message': True,\n        'replacements': { \n            'слово1': 'замена1', #что на что меняем#\n            'слово2': 'замена2',\n            'слово3': 'замена3',",
+        "detail": "interceptor.channels",
+        "documentation": {}
+    },
+    {
         "label": "channels_to_listen",
         "kind": 5,
         "importPath": "interceptor.channels",
         "description": "interceptor.channels",
-        "peekOfCode": "channels_to_listen = {\n    4593819858: {\n        'moderation_if_image': True,\n        'replacements': {\n            'слово1': 'замена1',\n            'слово2': 'замена2',\n            'слово3': 'замена3',\n            'слово4': 'замена4',\n        }\n    },",
+        "peekOfCode": "channels_to_listen = {\n    4593819858: { #InterTest2\n        'moderation_if_image': True,\n        'auto_send_text_message': True,\n        'replacements': { \n            'слово1': 'замена1', #что на что меняем#\n            'слово2': 'замена2',\n            'слово3': 'замена3',\n            'слово4': 'замена4',\n        }",
         "detail": "interceptor.channels",
         "documentation": {}
     },
@@ -501,7 +601,7 @@
         "kind": 5,
         "importPath": "interceptor.channels",
         "description": "interceptor.channels",
-        "peekOfCode": "channels_to_send = ['@MuntyanValery']",
+        "peekOfCode": "channels_to_send = [2204843457] #2170620330",
         "detail": "interceptor.channels",
         "documentation": {}
     },
@@ -555,7 +655,7 @@
         "kind": 5,
         "importPath": "interceptor.routing",
         "description": "interceptor.routing",
-        "peekOfCode": "websocket_urlpatterns = [\n    re_path(r'ws/telegram/$', consumers.TelegramConsumer.as_asgi()),\n]",
+        "peekOfCode": "websocket_urlpatterns = [\n    re_path(r'^ws/telegram/$', consumers.TelegramConsumer.as_asgi()),\n]",
         "detail": "interceptor.routing",
         "documentation": {}
     },
@@ -582,7 +682,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "api_id = 24364263\napi_hash = \"1f03c4f0e8617dd5fe4f16e9d629f47c\"\n# Настройка логирования\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(__name__)\nconn = mysql.connector.connect(\n    host=\"localhost\", user=\"root\", password=\"88888888\", database=\"btp\"\n)\ncursor = conn.cursor()\ndef load_session(session_name):",
+        "peekOfCode": "api_id = 25965329 #24364263\napi_hash = \"6604012087bc1273f1f918571c02af24\" #\"1f03c4f0e8617dd5fe4f16e9d629f47c\"\n# Настройка логирования\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(__name__)\nlogger.info(\"[asgi] DJANGO_SETTINGS_MODULE := telegram_interceptor.settings\")\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'telegram_interceptor.settings')\n# Инициализация Django перед использованием любых моделей или компонентов\nlogger.info(\"[asgi] django.setup()\")\ndjango.setup()",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -591,7 +691,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "api_hash = \"1f03c4f0e8617dd5fe4f16e9d629f47c\"\n# Настройка логирования\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(__name__)\nconn = mysql.connector.connect(\n    host=\"localhost\", user=\"root\", password=\"88888888\", database=\"btp\"\n)\ncursor = conn.cursor()\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")",
+        "peekOfCode": "api_hash = \"6604012087bc1273f1f918571c02af24\" #\"1f03c4f0e8617dd5fe4f16e9d629f47c\"\n# Настройка логирования\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(__name__)\nlogger.info(\"[asgi] DJANGO_SETTINGS_MODULE := telegram_interceptor.settings\")\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'telegram_interceptor.settings')\n# Инициализация Django перед использованием любых моделей или компонентов\nlogger.info(\"[asgi] django.setup()\")\ndjango.setup()\n# Настройки подключения к базе данных из settings.py",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -600,7 +700,16 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "logger = logging.getLogger(__name__)\nconn = mysql.connector.connect(\n    host=\"localhost\", user=\"root\", password=\"88888888\", database=\"btp\"\n)\ncursor = conn.cursor()\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")\n    cursor.execute(\n        \"SELECT session_string FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,),",
+        "peekOfCode": "logger = logging.getLogger(__name__)\nlogger.info(\"[asgi] DJANGO_SETTINGS_MODULE := telegram_interceptor.settings\")\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'telegram_interceptor.settings')\n# Инициализация Django перед использованием любых моделей или компонентов\nlogger.info(\"[asgi] django.setup()\")\ndjango.setup()\n# Настройки подключения к базе данных из settings.py\ndb_config = {\n    'host': settings.DATABASES['default']['HOST'],\n    'user': settings.DATABASES['default']['USER'],",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
+        "label": "db_config",
+        "kind": 5,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "db_config = {\n    'host': settings.DATABASES['default']['HOST'],\n    'user': settings.DATABASES['default']['USER'],\n    'password': settings.DATABASES['default']['PASSWORD'],\n    'database': settings.DATABASES['default']['NAME']\n}\nconn = mysql.connector.connect(**db_config)\ncursor = conn.cursor()\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -609,7 +718,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "conn = mysql.connector.connect(\n    host=\"localhost\", user=\"root\", password=\"88888888\", database=\"btp\"\n)\ncursor = conn.cursor()\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")\n    cursor.execute(\n        \"SELECT session_string FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,),\n    )",
+        "peekOfCode": "conn = mysql.connector.connect(**db_config)\ncursor = conn.cursor()\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")\n    cursor.execute(\n        \"SELECT session_string FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,),\n    )\n    row = cursor.fetchone()\n    if row:",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -627,7 +736,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "session_name = \"intercept_session\"\nsession_string = load_session(session_name) or \"\"\nsession = StringSession(session_string)\nchannels_to_listen = [\n    4593819858, \n    2204843457, \n    1242446516, \n    4517954004, \n    1363028986\n]",
+        "peekOfCode": "session_name = \"intercept_session\"\nsession_string = load_session(session_name) or \"\"\nsession = StringSession(session_string)",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -636,7 +745,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "session_string = load_session(session_name) or \"\"\nsession = StringSession(session_string)\nchannels_to_listen = [\n    4593819858, \n    2204843457, \n    1242446516, \n    4517954004, \n    1363028986\n]\nchannels_to_send = ['@MuntyanValery']",
+        "peekOfCode": "session_string = load_session(session_name) or \"\"\nsession = StringSession(session_string)",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -645,26 +754,17 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "session = StringSession(session_string)\nchannels_to_listen = [\n    4593819858, \n    2204843457, \n    1242446516, \n    4517954004, \n    1363028986\n]\nchannels_to_send = ['@MuntyanValery']",
+        "peekOfCode": "session = StringSession(session_string)",
         "detail": "interceptor.ses",
         "documentation": {}
     },
     {
-        "label": "channels_to_listen",
-        "kind": 5,
-        "importPath": "interceptor.ses",
-        "description": "interceptor.ses",
-        "peekOfCode": "channels_to_listen = [\n    4593819858, \n    2204843457, \n    1242446516, \n    4517954004, \n    1363028986\n]\nchannels_to_send = ['@MuntyanValery']",
-        "detail": "interceptor.ses",
-        "documentation": {}
-    },
-    {
-        "label": "channels_to_send",
-        "kind": 5,
-        "importPath": "interceptor.ses",
-        "description": "interceptor.ses",
-        "peekOfCode": "channels_to_send = ['@MuntyanValery']",
-        "detail": "interceptor.ses",
+        "label": "hash_file",
+        "kind": 2,
+        "importPath": "interceptor.telethon_client",
+        "description": "interceptor.telethon_client",
+        "peekOfCode": "def hash_file(file_path):\n    \"\"\"Вычисляет хэш для файла по его содержимому.\"\"\"\n    hasher = hashlib.sha256()\n    with open(file_path, 'rb') as f:\n        buf = f.read()\n        hasher.update(buf)\n    return hasher.hexdigest()\n# Создание клиента\nclient = TelegramClient(ses.session, channels.api_id, channels.api_hash)\nasync def send_message_to_channels(message_text, files):",
+        "detail": "interceptor.telethon_client",
         "documentation": {}
     },
     {
@@ -681,7 +781,34 @@
         "kind": 2,
         "importPath": "interceptor.telethon_client",
         "description": "interceptor.telethon_client",
-        "peekOfCode": "def extract_original_id(chat_id):\n    # Преобразовываем chat_id в строку для удобства обработки\n    chat_id_str = str(chat_id)\n    # Проверяем, начинается ли строка с '-100' и извлекаем число\n    match = re.match(r'-100(\\d+)', chat_id_str)\n    if match:\n        return int(match.group(1))  # Возвращаем ID без префикса, преобразованное в int\n    return abs(chat_id)  # Возвращаем оригинальный chat_id, если префикс отсутствует\nasync def start_client():\n    download_directory = \"storage/\"",
+        "peekOfCode": "def extract_original_id(chat_id):\n    # Преобразовываем chat_id в строку для удобства обработки\n    chat_id_str = str(chat_id)\n    # Проверяем, начинается ли строка с '-100' и извлекаем число\n    match = re.match(r'-100(\\d+)', chat_id_str)\n    if match:\n        return int(match.group(1))  # Возвращаем ID без префикса, преобразованное в int\n    return abs(chat_id)  # Возвращаем оригинальный chat_id, если префикс отсутствует\nasync def start_client():\n    global handler_registered",
+        "detail": "interceptor.telethon_client",
+        "documentation": {}
+    },
+    {
+        "label": "handler_registered",
+        "kind": 5,
+        "importPath": "interceptor.telethon_client",
+        "description": "interceptor.telethon_client",
+        "peekOfCode": "handler_registered = False\n# Ограничение на количество хранимых сообщений\nMAX_SENT_MESSAGES = 30\nsent_messages = deque(maxlen=MAX_SENT_MESSAGES)  # Очередь с ограничением размера\ndef hash_file(file_path):\n    \"\"\"Вычисляет хэш для файла по его содержимому.\"\"\"\n    hasher = hashlib.sha256()\n    with open(file_path, 'rb') as f:\n        buf = f.read()\n        hasher.update(buf)",
+        "detail": "interceptor.telethon_client",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_SENT_MESSAGES",
+        "kind": 5,
+        "importPath": "interceptor.telethon_client",
+        "description": "interceptor.telethon_client",
+        "peekOfCode": "MAX_SENT_MESSAGES = 30\nsent_messages = deque(maxlen=MAX_SENT_MESSAGES)  # Очередь с ограничением размера\ndef hash_file(file_path):\n    \"\"\"Вычисляет хэш для файла по его содержимому.\"\"\"\n    hasher = hashlib.sha256()\n    with open(file_path, 'rb') as f:\n        buf = f.read()\n        hasher.update(buf)\n    return hasher.hexdigest()\n# Создание клиента",
+        "detail": "interceptor.telethon_client",
+        "documentation": {}
+    },
+    {
+        "label": "sent_messages",
+        "kind": 5,
+        "importPath": "interceptor.telethon_client",
+        "description": "interceptor.telethon_client",
+        "peekOfCode": "sent_messages = deque(maxlen=MAX_SENT_MESSAGES)  # Очередь с ограничением размера\ndef hash_file(file_path):\n    \"\"\"Вычисляет хэш для файла по его содержимому.\"\"\"\n    hasher = hashlib.sha256()\n    with open(file_path, 'rb') as f:\n        buf = f.read()\n        hasher.update(buf)\n    return hasher.hexdigest()\n# Создание клиента\nclient = TelegramClient(ses.session, channels.api_id, channels.api_hash)",
         "detail": "interceptor.telethon_client",
         "documentation": {}
     },
@@ -690,7 +817,7 @@
         "kind": 5,
         "importPath": "interceptor.telethon_client",
         "description": "interceptor.telethon_client",
-        "peekOfCode": "client = TelegramClient(ses.session, ses.api_id, ses.api_hash)\nasync def send_message_to_channels(message_text, files):\n    logger.info(\n        f\"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}\"\n    )\n    await asyncio.sleep(1)\n    for channel in channels.channels_to_send:\n        if files:\n            for file in files:\n                logger.info(",
+        "peekOfCode": "client = TelegramClient(ses.session, channels.api_id, channels.api_hash)\nasync def send_message_to_channels(message_text, files):\n    logger.info(f\"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}\")\n    await asyncio.sleep(1)\n    # Создаем уникальный идентификатор сообщения/файла\n    unique_id = message_text if message_text else \"\"\n    if files:\n        for file in files:\n            unique_id += hash_file(file)  # Добавляем хэш файла к идентификатору\n    if unique_id in sent_messages:",
         "detail": "interceptor.telethon_client",
         "documentation": {}
     },
@@ -749,6 +876,15 @@
         "documentation": {}
     },
     {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "telegram_interceptor.asgi",
+        "description": "telegram_interceptor.asgi",
+        "peekOfCode": "logger = logging.getLogger(__name__)\nlogger.info(\"[asgi] DJANGO_SETTINGS_MODULE := telegram_interceptor.settings\")\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', 'telegram_interceptor.settings')\n# Инициализация Django перед использованием любых моделей или компонентов\nlogger.info(\"[asgi] django.setup()\")\ndjango.setup()\nlogger.info(f\"[asgi] interceptor.routing.websocket_urlpatterns = {websocket_urlpatterns}\")\napplication = ProtocolTypeRouter({\n    \"http\": get_asgi_application(),\n    \"websocket\": AuthMiddlewareStack(",
+        "detail": "telegram_interceptor.asgi",
+        "documentation": {}
+    },
+    {
         "label": "application",
         "kind": 5,
         "importPath": "telegram_interceptor.asgi",
@@ -762,7 +898,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure--1oswlps$#dy(#$b^#v+%_6mslxfng7$d^+er((_sy@ycc7b39'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure--1oswlps$#dy(#$b^#v+%_6mslxfng7$d^+er((_sy@ycc7b39'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -771,7 +907,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure--1oswlps$#dy(#$b^#v+%_6mslxfng7$d^+er((_sy@ycc7b39'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure--1oswlps$#dy(#$b^#v+%_6mslxfng7$d^+er((_sy@ycc7b39'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -780,7 +916,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -789,7 +925,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'interceptor',",
+        "peekOfCode": "ALLOWED_HOSTS = ['*']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'interceptor',",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -834,7 +970,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'telegram_interceptor.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'btp',\n        'USER': 'root',\n        'PASSWORD': '88888888',\n        'HOST': 'localhost',",
+        "peekOfCode": "WSGI_APPLICATION = 'telegram_interceptor.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'btp',\n        'USER': 'root',\n        'PASSWORD': '88888888', #'!A3z5puU68G*',\n        'HOST': '127.0.0.1',",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -843,7 +979,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'btp',\n        'USER': 'root',\n        'PASSWORD': '88888888',\n        'HOST': 'localhost',\n        'PORT': '3306',  # по умолчанию 3306 для MySQL\n    }\n}",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'btp',\n        'USER': 'root',\n        'PASSWORD': '88888888', #'!A3z5puU68G*',\n        'HOST': '127.0.0.1',\n        'PORT': '3306',  # по умолчанию 3306 для MySQL\n    }\n}",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -915,7 +1051,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSESSION_NAME = \"interceptor_session\" \nAPI_ID = 24364263  # Замените на ваш API ID\nAPI_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSESSION_NAME = \"interceptor_session\" \nAPI_ID = 24364263  # Замените на ваш API ID\nAPI_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '127.0.0.1' #'localhost'\nCHANNEL_LAYERS = {",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -924,7 +1060,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSESSION_NAME = \"interceptor_session\" \nAPI_ID = 24364263  # Замените на ваш API ID\nAPI_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nSESSION_NAME = \"interceptor_session\" \nAPI_ID = 24364263  # Замените на ваш API ID\nAPI_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '127.0.0.1' #'localhost'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -933,7 +1069,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "SESSION_NAME = \"interceptor_session\" \nAPI_ID = 24364263  # Замените на ваш API ID\nAPI_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту",
+        "peekOfCode": "SESSION_NAME = \"interceptor_session\" \nAPI_ID = 24364263  # Замените на ваш API ID\nAPI_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '127.0.0.1' #'localhost'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -942,7 +1078,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "API_ID = 24364263  # Замените на ваш API ID\nAPI_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },",
+        "peekOfCode": "API_ID = 24364263  # Замените на ваш API ID\nAPI_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '127.0.0.1' #'localhost'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -951,7 +1087,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "API_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },\n    },",
+        "peekOfCode": "API_HASH = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" \nASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '127.0.0.1' #'localhost'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },\n    },",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -960,7 +1096,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "ASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },\n    },\n}",
+        "peekOfCode": "ASGI_APPLICATION = 'telegram_interceptor.asgi.application'\nREDISHOST = '127.0.0.1' #'localhost'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },\n    },\n}",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -969,7 +1105,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "REDISHOST = '172.18.17.107'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },\n    },\n}\nSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
+        "peekOfCode": "REDISHOST = '127.0.0.1' #'localhost'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },\n    },\n}\nSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -978,7 +1114,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "CHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },\n    },\n}\nSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
+        "peekOfCode": "CHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels_redis.core.RedisChannelLayer',\n        'CONFIG': {\n            \"hosts\": [(REDISHOST, 6379)],  # убедитесь, что Redis работает на этом порту\n        },\n    },\n}\nSTATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'\n# В Django settings.py",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -987,7 +1123,16 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
+        "peekOfCode": "STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'\n# В Django settings.py\nSECURE_CROSS_ORIGIN_OPENER_POLICY = None",
+        "detail": "telegram_interceptor.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECURE_CROSS_ORIGIN_OPENER_POLICY",
+        "kind": 5,
+        "importPath": "telegram_interceptor.settings",
+        "description": "telegram_interceptor.settings",
+        "peekOfCode": "SECURE_CROSS_ORIGIN_OPENER_POLICY = None",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },

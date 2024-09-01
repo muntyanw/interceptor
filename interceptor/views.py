@@ -5,6 +5,7 @@ from django.conf import settings
 from django.http import JsonResponse
 from telethon.sessions import StringSession
 from . import ses
+from . import channels
 from . import telethon_client
 import subprocess
 import asyncio

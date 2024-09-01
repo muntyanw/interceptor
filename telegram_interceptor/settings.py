@@ -84,8 +84,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'btp',
         'USER': 'root',
-        'PASSWORD': '!A3z5puU68G*',
-        'HOST': 'localhost',
+        'PASSWORD': '88888888', #'!A3z5puU68G*',
+        'HOST': '127.0.0.1',
         'PORT': '3306',  # по умолчанию 3306 для MySQL
     }
 }
@@ -147,7 +147,7 @@ API_HASH = "1f03c4f0e8617dd5fe4f16e9d629f47c"
 
 ASGI_APPLICATION = 'telegram_interceptor.asgi.application'
 
-REDISHOST = '172.19.170.124' #'localhost'
+REDISHOST = '127.0.0.1' #'localhost'
 
 CHANNEL_LAYERS = {
     'default': {
