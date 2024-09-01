@@ -30,7 +30,7 @@ def hash_file(file_path):
     return hasher.hexdigest()
 
 # Создание клиента
-client = TelegramClient(ses.session, ses.api_id, ses.api_hash)
+client = TelegramClient(ses.session, channels.api_id, channels.api_hash)
 
 async def send_message_to_channels(message_text, files):
     logger.info(f"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}")

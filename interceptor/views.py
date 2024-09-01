@@ -26,7 +26,7 @@ async def message_list_and_edit(request, edit_pk=None):
     session_string = ses.load_session(session_name)
     telethon_client_task_running = cache.get('telethon_client_task_running')
 
-    client = TelegramClient(StringSession(session_string), ses.api_id, ses.api_hash)
+    client = TelegramClient(StringSession(session_string), channels.api_id, channels.api_hash)
     await client.connect()
     logger.info("[message_list_and_edit] client.connect")
     if not await client.is_user_authorized() or not telethon_client_task_running:

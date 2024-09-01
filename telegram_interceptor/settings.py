@@ -147,7 +147,7 @@ API_HASH = "1f03c4f0e8617dd5fe4f16e9d629f47c"
 
 ASGI_APPLICATION = 'telegram_interceptor.asgi.application'
 
-REDISHOST = 'localhost'
+REDISHOST = '172.19.170.124' #'localhost'
 
 CHANNEL_LAYERS = {
     'default': {

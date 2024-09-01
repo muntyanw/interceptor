@@ -1,3 +1,6 @@
+api_id = 25965329 #24364263
+api_hash = "6604012087bc1273f1f918571c02af24" #"1f03c4f0e8617dd5fe4f16e9d629f47c"
+
 #каналы которые слушаем#
 channels_to_listen = {
     4593819858: { #InterTest2
@@ -10,16 +13,16 @@ channels_to_listen = {
             'слово4': 'замена4',
         }
     },
-    # 2204843457: {#InterTest
-    #     'moderation_if_image': True,
-    #     'auto_send_text_message': True,
-    #     'replacements': {
-    #         'слово1': 'замена1',
-    #         'слово2': 'замена2',
-    #         'слово3': 'замена3',
-    #         'слово4': 'замена4',
-    #     }
-    # },
+    2204843457: {#InterTest
+        'moderation_if_image': True,
+        'auto_send_text_message': True,
+        'replacements': {
+            'слово1': 'замена1',
+            'слово2': 'замена2',
+            'слово3': 'замена3',
+            'слово4': 'замена4',
+        }
+    },
     # 1242446516: {#Україна 24/7
     #     'moderation_if_image': True,
     #     'auto_send_text_message': True,
