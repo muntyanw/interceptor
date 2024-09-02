@@ -574,7 +574,7 @@
         "kind": 5,
         "importPath": "interceptor.channels",
         "description": "interceptor.channels",
-        "peekOfCode": "api_id = 24364263  #25965329\napi_hash = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" #\"6604012087bc1273f1f918571c02af24\"\n#каналы которые слушаем#\nchannels_to_listen = {\n    2204843457: {#InterTest\n        'moderation_if_image': True,\n        'auto_moderation_and_send_text_message': False,\n        'replacements': {\n            'слово1': 'замена1',\n            'слово2': 'замена2',",
+        "peekOfCode": "api_id = 24364263  #25965329\napi_hash = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" #\"6604012087bc1273f1f918571c02af24\"\n#каналы которые слушаем#\nchannels_to_listen = {\n    # 1603064946: {#InterTest\n    #     'moderation_if_image': True,\n    #     'auto_moderation_and_send_text_message': True,\n    #     'replacements': {\n    #         'слово1': 'замена1',\n    #         'слово2': 'замена2',",
         "detail": "interceptor.channels",
         "documentation": {}
     },
@@ -583,7 +583,7 @@
         "kind": 5,
         "importPath": "interceptor.channels",
         "description": "interceptor.channels",
-        "peekOfCode": "api_hash = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" #\"6604012087bc1273f1f918571c02af24\"\n#каналы которые слушаем#\nchannels_to_listen = {\n    2204843457: {#InterTest\n        'moderation_if_image': True,\n        'auto_moderation_and_send_text_message': False,\n        'replacements': {\n            'слово1': 'замена1',\n            'слово2': 'замена2',\n            'слово3': 'замена3',",
+        "peekOfCode": "api_hash = \"1f03c4f0e8617dd5fe4f16e9d629f47c\" #\"6604012087bc1273f1f918571c02af24\"\n#каналы которые слушаем#\nchannels_to_listen = {\n    # 1603064946: {#InterTest\n    #     'moderation_if_image': True,\n    #     'auto_moderation_and_send_text_message': True,\n    #     'replacements': {\n    #         'слово1': 'замена1',\n    #         'слово2': 'замена2',\n    #         'слово3': 'замена3',",
         "detail": "interceptor.channels",
         "documentation": {}
     },
@@ -592,7 +592,7 @@
         "kind": 5,
         "importPath": "interceptor.channels",
         "description": "interceptor.channels",
-        "peekOfCode": "channels_to_listen = {\n    2204843457: {#InterTest\n        'moderation_if_image': True,\n        'auto_moderation_and_send_text_message': False,\n        'replacements': {\n            'слово1': 'замена1',\n            'слово2': 'замена2',\n            'слово3': 'замена3',\n            'слово4': 'замена4',\n        }",
+        "peekOfCode": "channels_to_listen = {\n    # 1603064946: {#InterTest\n    #     'moderation_if_image': True,\n    #     'auto_moderation_and_send_text_message': True,\n    #     'replacements': {\n    #         'слово1': 'замена1',\n    #         'слово2': 'замена2',\n    #         'слово3': 'замена3',\n    #         'слово4': 'замена4',\n    #     }",
         "detail": "interceptor.channels",
         "documentation": {}
     },
