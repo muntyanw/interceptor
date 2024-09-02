@@ -3,16 +3,16 @@ api_hash = "1f03c4f0e8617dd5fe4f16e9d629f47c" #"6604012087bc1273f1f918571c02af24
 
 #каналы которые слушаем#
 channels_to_listen = {
-    1603064946: {#InterTest
-        'moderation_if_image': True,
-        'auto_moderation_and_send_text_message': True,
-        'replacements': {
-            'слово1': 'замена1',
-            'слово2': 'замена2',
-            'слово3': 'замена3',
-            'слово4': 'замена4',
-        }
-    },
+    # 1603064946: {#InterTest
+    #     'moderation_if_image': True,
+    #     'auto_moderation_and_send_text_message': True,
+    #     'replacements': {
+    #         'слово1': 'замена1',
+    #         'слово2': 'замена2',
+    #         'слово3': 'замена3',
+    #         'слово4': 'замена4',
+    #     }
+    # },
     2204843457: {#InterTest
         'moderation_if_image': True,
         'auto_moderation_and_send_text_message': False,
