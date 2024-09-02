@@ -880,7 +880,7 @@
         "kind": 2,
         "importPath": "interceptor.views",
         "description": "interceptor.views",
-        "peekOfCode": "def update_auto_send_setting(request):\n    if request.method == \"POST\":\n        setting = AutoSendMessageSetting.objects.first()\n        if not setting:\n            setting = AutoSendMessageSetting()\n        setting.is_enabled = 'is_enabled' in request.POST\n        setting.save()\n    return redirect('message_list_and_edit')\n@csrf_exempt  # Only use if you have a custom CSRF setup, otherwise handle CSRF with Django's middleware\ndef logout_view(request):",
+        "peekOfCode": "def update_auto_send_setting(request):\n    if request.method == \"POST\":\n        setting = AutoSendMessageSetting.objects.first()\n        if not setting:\n            setting = AutoSendMessageSetting()\n        setting.is_enabled = 'is_enabled' in request.POST\n        setting.save()\n    return redirect('message_list_and_edit')\ndef logout_view(request):\n    if request.method == 'POST':",
         "detail": "interceptor.views",
         "documentation": {}
     },

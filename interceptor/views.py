@@ -289,7 +289,6 @@ def update_auto_send_setting(request):
         setting.save()
     return redirect('message_list_and_edit')
 
-@csrf_exempt  # Only use if you have a custom CSRF setup, otherwise handle CSRF with Django's middleware
 def logout_view(request):
     if request.method == 'POST':
         session_name = 'intercept_session'  # The session name you want to remove
