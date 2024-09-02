@@ -14,6 +14,7 @@ from telethon.tl.types import PeerChannel
 from collections import deque
 import hashlib
 import time
+from telethon.tl.types import InputMediaPhoto
 
 handler_registered = False
 
@@ -52,8 +53,9 @@ async def send_message_to_channels(message_text, files):
         entity = await client.get_entity(PeerChannel(channel))
         try:
             if files:
-                logger.info(f"[send_message_to_channels] Отправка файла в канал: {channel}, файл: {file}")
-                await client.send_file(entity, files, caption=message_text)
+                logger.info(f"[send_message_to_channels] Отправка файла в канал: {channel}, файл: {files}")
+                media = [InputMediaPhoto(file) for file in files]
+                await client.send_file(entity, media, caption=message_text, album=True)
             else:
                 logger.info(f"[send_message_to_channels] Отправка сообщения в канал: {channel}")
                 await client.send_message(entity, message_text)

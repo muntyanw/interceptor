@@ -368,6 +368,14 @@
         "documentation": {}
     },
     {
+        "label": "InputMediaPhoto",
+        "importPath": "telethon.tl.types",
+        "description": "telethon.tl.types",
+        "isExtraImport": true,
+        "detail": "telethon.tl.types",
+        "documentation": {}
+    },
+    {
         "label": "deque",
         "importPath": "collections",
         "description": "collections",
