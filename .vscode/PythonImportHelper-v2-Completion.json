@@ -970,7 +970,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'telegram_interceptor.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'btp',\n        'USER': 'root',\n        'PASSWORD': '88888888', #'!A3z5puU68G*',\n        'HOST': '127.0.0.1',",
+        "peekOfCode": "WSGI_APPLICATION = 'telegram_interceptor.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'btp',\n        'USER': 'root',\n        'PASSWORD': '!A3z5puU68G*',\n        'HOST': '127.0.0.1',",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
@@ -979,7 +979,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.settings",
         "description": "telegram_interceptor.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'btp',\n        'USER': 'root',\n        'PASSWORD': '88888888', #'!A3z5puU68G*',\n        'HOST': '127.0.0.1',\n        'PORT': '3306',  # по умолчанию 3306 для MySQL\n    }\n}",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'btp',\n        'USER': 'root',\n        'PASSWORD': '!A3z5puU68G*',\n        'HOST': '127.0.0.1',\n        'PORT': '3306',  # по умолчанию 3306 для MySQL\n    }\n}",
         "detail": "telegram_interceptor.settings",
         "documentation": {}
     },
