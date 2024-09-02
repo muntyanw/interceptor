@@ -58,7 +58,7 @@ async def send_message_to_channels(message_text, files):
                     message_text = ""  # Сброс текста сообщения, чтобы он не повторялся
             else:
                 logger.info(f"[send_message_to_channels] Отправка сообщения в канал: {channel}")
-                await client.send_message(entity, message_text, parse_mode='html')
+                await client.send_message(entity, message_text)
         except FloodWaitError as e:
             logger.warning(f"[send_message_to_channels] FloodWaitError: {e}. Ожидание {e.seconds} секунд.")
             await asyncio.sleep(e.seconds)  # Ожидание перед повторной отправкой
@@ -84,11 +84,11 @@ def replace_words(text, channel_id):
     pattern = r'\b\w+\b'
     modified_text = re.sub(pattern, replace_match, text)
     moderation_if_image = channel_info.get('moderation_if_image', False)
-    auto_send_text_message = channel_info.get('auto_send_text_message', False)
+    auto_moderation_and_send_text_message = channel_info.get('auto_moderation_and_send_text_message', False)
     
     logger.info(f"[replace_words]  moderation_if_image = {moderation_if_image}")
-    logger.info(f"[replace_words]  auto_send_text_message = {auto_send_text_message}")
-    return modified_text, moderation_if_image, auto_send_text_message
+    logger.info(f"[replace_words]  auto_moderation_and_send_text_message = {auto_moderation_and_send_text_message}")
+    return modified_text, moderation_if_image, auto_moderation_and_send_text_message
 
 def extract_original_id(chat_id):
     # Преобразовываем chat_id в строку для удобства обработки
@@ -138,17 +138,17 @@ async def start_client():
                         file_paths.append(file_path)
                         logger.info(f"[handler] Файл загружен: {file_path} из канала {event.chat_id}")
 
-                    message = event.message.message if event.message else "No message"
-                    logger.info(f"[handler] Сообщение из канала {event.chat_id}: {message}, Отправитель: {sender_name}, Файлы: {file_paths}")
+                    message_text = event.message.text if event.message else "No message"
+                    logger.info(f"[handler] Сообщение из канала {event.chat_id}: {message_text}, Отправитель: {sender_name}, Файлы: {file_paths}")
 
                     setting = await sync_to_async(AutoSendMessageSetting.objects.first)()
                     if setting and setting.is_enabled:
-                        await send_message_to_channels(message, file_paths)
+                        await send_message_to_channels(message_text, file_paths)
                     else:
-                        modified_message, moderation_if_image, auto_send_text_message = replace_words(message, chat_id)
+                        modified_message, moderation_if_image, auto_moderation_and_send_text_message = replace_words(message_text, chat_id)
                         logger.error(f"[handler] moderation_if_image: {moderation_if_image}, file_paths: {file_paths}, moderation_if_image and file_paths: {moderation_if_image and file_paths}")
 
-                        if (moderation_if_image and file_paths) or not auto_send_text_message:
+                        if (moderation_if_image and file_paths) or not auto_moderation_and_send_text_message:
                             logger.info(f"[handler] Отправка сообщения через WebSocket на фронт человеку")
                             channel_layer = get_channel_layer()
                             await channel_layer.group_send(

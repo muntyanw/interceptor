@@ -166,7 +166,7 @@
         var reconnectInterval = 5000; // Интервал переподключения в миллисекундах
     
         function createWebSocket() {
-          chatSocket = new WebSocket("ws://" + window.location.host + ":{{port}}/ws/telegram/");
+          chatSocket = new WebSocket("ws://" + window.location.host + "/ws/telegram/");
     
           chatSocket.onopen = function () {
             console.log("WebSocket connection established.");
