@@ -34,6 +34,7 @@ conn = mysql.connector.connect(**db_config)
 
 cursor = conn.cursor()
 
+session_name = "intercept_session"
 
 def load_session(session_name):
     logger.info(f"Загрузка сессии для: {session_name}")
@@ -61,9 +62,18 @@ def save_session(session_name, session_string):
         (session_name, session_string),
     )
     conn.commit()
+    
+def remove_session(session_name):
+    logger.info(f"Удаление сессии для: {session_name}")
+    cursor.execute(
+        "DELETE FROM telethon_sessions WHERE session_name = %s",
+        (session_name,)
+    )
+    conn.commit()
+    logger.info("Сессия успешно удалена")
 
 
-session_name = "intercept_session"
 session_string = load_session(session_name) or ""
 session = StringSession(session_string)
+
 

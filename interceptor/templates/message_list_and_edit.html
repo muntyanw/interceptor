@@ -83,6 +83,14 @@
             Автоматически отправлено сообщений: {{ setting.auto_sent_count }}
           </p> {% endcomment %}
         </div>
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-2">
+          <a class="btn btn-secondary" id="logout-button" onclick="logout()">
+            Logout
+          </a>
+        </div>
+
       </div>
 
       <div class="row">
@@ -378,6 +386,41 @@
           // $button.prop("disabled", false);
         });
       });
+
+      // Function to get CSRF token from cookie
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+      }
+
+      function logout() {
+        fetch('/logout/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken') // Assuming you're using Django's CSRF protection
+            },
+            body: JSON.stringify({})
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.reload(); // Refresh the page after logout
+            } else {
+                console.error('Logout failed');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    };
     </script>
     
   </body>

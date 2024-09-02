@@ -678,6 +678,15 @@
         "documentation": {}
     },
     {
+        "label": "remove_session",
+        "kind": 2,
+        "importPath": "interceptor.ses",
+        "description": "interceptor.ses",
+        "peekOfCode": "def remove_session(session_name):\n    logger.info(f\"Удаление сессии для: {session_name}\")\n    cursor.execute(\n        \"DELETE FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,)\n    )\n    conn.commit()\n    logger.info(\"Сессия успешно удалена\")\nsession_string = load_session(session_name) or \"\"\nsession = StringSession(session_string)",
+        "detail": "interceptor.ses",
+        "documentation": {}
+    },
+    {
         "label": "api_id",
         "kind": 5,
         "importPath": "interceptor.ses",
@@ -709,7 +718,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "db_config = {\n    'host': settings.DATABASES['default']['HOST'],\n    'user': settings.DATABASES['default']['USER'],\n    'password': settings.DATABASES['default']['PASSWORD'],\n    'database': settings.DATABASES['default']['NAME']\n}\nconn = mysql.connector.connect(**db_config)\ncursor = conn.cursor()\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")",
+        "peekOfCode": "db_config = {\n    'host': settings.DATABASES['default']['HOST'],\n    'user': settings.DATABASES['default']['USER'],\n    'password': settings.DATABASES['default']['PASSWORD'],\n    'database': settings.DATABASES['default']['NAME']\n}\nconn = mysql.connector.connect(**db_config)\ncursor = conn.cursor()\nsession_name = \"intercept_session\"\ndef load_session(session_name):",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -718,7 +727,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "conn = mysql.connector.connect(**db_config)\ncursor = conn.cursor()\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")\n    cursor.execute(\n        \"SELECT session_string FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,),\n    )\n    row = cursor.fetchone()\n    if row:",
+        "peekOfCode": "conn = mysql.connector.connect(**db_config)\ncursor = conn.cursor()\nsession_name = \"intercept_session\"\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")\n    cursor.execute(\n        \"SELECT session_string FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,),\n    )\n    row = cursor.fetchone()",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -727,7 +736,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "cursor = conn.cursor()\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")\n    cursor.execute(\n        \"SELECT session_string FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,),\n    )\n    row = cursor.fetchone()\n    if row:\n        logger.info(\"Сессия успешно загружена\")",
+        "peekOfCode": "cursor = conn.cursor()\nsession_name = \"intercept_session\"\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")\n    cursor.execute(\n        \"SELECT session_string FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,),\n    )\n    row = cursor.fetchone()\n    if row:",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -736,7 +745,7 @@
         "kind": 5,
         "importPath": "interceptor.ses",
         "description": "interceptor.ses",
-        "peekOfCode": "session_name = \"intercept_session\"\nsession_string = load_session(session_name) or \"\"\nsession = StringSession(session_string)",
+        "peekOfCode": "session_name = \"intercept_session\"\ndef load_session(session_name):\n    logger.info(f\"Загрузка сессии для: {session_name}\")\n    cursor.execute(\n        \"SELECT session_string FROM telethon_sessions WHERE session_name = %s\",\n        (session_name,),\n    )\n    row = cursor.fetchone()\n    if row:\n        logger.info(\"Сессия успешно загружена\")",
         "detail": "interceptor.ses",
         "documentation": {}
     },
@@ -871,7 +880,16 @@
         "kind": 2,
         "importPath": "interceptor.views",
         "description": "interceptor.views",
-        "peekOfCode": "def update_auto_send_setting(request):\n    if request.method == \"POST\":\n        setting = AutoSendMessageSetting.objects.first()\n        if not setting:\n            setting = AutoSendMessageSetting()\n        setting.is_enabled = 'is_enabled' in request.POST\n        setting.save()\n    return redirect('message_list_and_edit')",
+        "peekOfCode": "def update_auto_send_setting(request):\n    if request.method == \"POST\":\n        setting = AutoSendMessageSetting.objects.first()\n        if not setting:\n            setting = AutoSendMessageSetting()\n        setting.is_enabled = 'is_enabled' in request.POST\n        setting.save()\n    return redirect('message_list_and_edit')\n@csrf_exempt  # Only use if you have a custom CSRF setup, otherwise handle CSRF with Django's middleware\ndef logout_view(request):",
+        "detail": "interceptor.views",
+        "documentation": {}
+    },
+    {
+        "label": "logout_view",
+        "kind": 2,
+        "importPath": "interceptor.views",
+        "description": "interceptor.views",
+        "peekOfCode": "def logout_view(request):\n    if request.method == 'POST':\n        session_name = 'intercept_session'  # The session name you want to remove\n        try:\n            ses.remove_session(session_name)  # Call the remove_session method\n            return JsonResponse({'status': 'success'})\n        except Exception as e:\n            return JsonResponse({'status': 'error', 'message': str(e)}, status=500)\n    return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)",
         "detail": "interceptor.views",
         "documentation": {}
     },
