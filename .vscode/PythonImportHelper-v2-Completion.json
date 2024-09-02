@@ -1159,7 +1159,7 @@
         "kind": 5,
         "importPath": "telegram_interceptor.urls",
         "description": "telegram_interceptor.urls",
-        "peekOfCode": "urlpatterns = [\n    path('telegram_auth/', views.telegram_auth, name='telegram_auth'),\n    path('', views.start_client_view, name='start_client'),\n    path('messages', views.message_list_and_edit, name='message_list_and_edit'),\n    path('edit/<int:edit_pk>/', views.message_list_and_edit, name='message_list_and_edit'),\n    path('send/<int:pk>/<str:chat_id>/', views.send_message, name='send_message'),\n    path('remove_file/<int:pk>/<int:file_index>/', views.remove_file, name='remove_file'),\n    path('contacts-and-channels/', views.get_contacts_and_channels, name='contacts_and_channels'),\n    path('update-setting/', views.update_auto_send_setting, name='update_auto_send_setting'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('telegram_auth/', views.telegram_auth, name='telegram_auth'),\n    path('', views.start_client_view, name='start_client'),\n    path('messages', views.message_list_and_edit, name='message_list_and_edit'),\n    path('edit/<int:edit_pk>/', views.message_list_and_edit, name='message_list_and_edit'),\n    path('send/<int:pk>/<str:chat_id>/', views.send_message, name='send_message'),\n    path('remove_file/<int:pk>/<int:file_index>/', views.remove_file, name='remove_file'),\n    path('contacts-and-channels/', views.get_contacts_and_channels, name='contacts_and_channels'),\n    path('update-setting/', views.update_auto_send_setting, name='update_auto_send_setting'),\n    path('logout/', views.logout_view, name='logout'),",
         "detail": "telegram_interceptor.urls",
         "documentation": {}
     },
