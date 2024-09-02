@@ -144,7 +144,7 @@ async def start_client():
                         await send_message_to_channels(message_text, file_paths)
                     else:
                         modified_message, moderation_if_image, auto_moderation_and_send_text_message = replace_words(message_text, chat_id)
-                        logger.error(f"[handler] moderation_if_image: {moderation_if_image}, file_paths: {file_paths}, moderation_if_image and file_paths: {moderation_if_image and file_paths}")
+                        logger.error(f"[handler] moderation_if_image: {moderation_if_image}, file_paths: {file_paths}, moderation_if_image and file_paths: {moderation_if_image and file_paths}, modified_message: {modified_message}")
 
                         if (moderation_if_image and file_paths) or not auto_moderation_and_send_text_message:
                             logger.info(f"[handler] Отправка сообщения через WebSocket на фронт человеку")
