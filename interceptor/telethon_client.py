@@ -52,10 +52,8 @@ async def send_message_to_channels(message_text, files):
         entity = await client.get_entity(PeerChannel(channel))
         try:
             if files:
-                for file in files:
-                    logger.info(f"[send_message_to_channels] Отправка файла в канал: {channel}, файл: {file}")
-                    await client.send_file(entity, file, caption=message_text)
-                    message_text = ""  # Сброс текста сообщения, чтобы он не повторялся
+                logger.info(f"[send_message_to_channels] Отправка файла в канал: {channel}, файл: {file}")
+                await client.send_file(entity, files, caption=message_text)
             else:
                 logger.info(f"[send_message_to_channels] Отправка сообщения в канал: {channel}")
                 await client.send_message(entity, message_text)
