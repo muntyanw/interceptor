@@ -67,7 +67,7 @@ channels_to_listen = {
         'moderation_if_image': False,
         'auto_moderation_and_send_text_message': True, #если это значение труе то будет производить автозамену и отсылать, если фэлз будет делать автозамену и отсылать на сайт человеку
         'replacements': {
-            'bingx': 'ссылка на мой сайт',
+            'bingx': 'google',
             'SamCrypto_Master': 'мойник',
            
         },
