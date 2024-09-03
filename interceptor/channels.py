@@ -13,18 +13,8 @@ channels_to_listen = {
     #         'слово4': 'замена4',
     #     }
     # },
-    2204843457: {#InterTest
-        'moderation_if_image': True,
-        'auto_moderation_and_send_text_message': False,
-        'replacements': {
-            'слово1': 'замена1',
-            'слово2': 'замена2',
-            'слово3': 'замена3',
-            'слово4': 'замена4',
-        }
-    },
-    1242446516: {#Україна 24/7
-        'moderation_if_image': True,
+    2183790519: {#Sender
+        'moderation_if_image': False,
         'auto_moderation_and_send_text_message': True,
         'replacements': {
             'слово1': 'замена1',
@@ -33,12 +23,52 @@ channels_to_listen = {
             'слово4': 'замена4',
         }
     },
+    1242446516: {#Україна 24/7
+        'moderation_if_image': False,
+        'auto_moderation_and_send_text_message': True,
+        'replacements': {
+            'слово1': 'замена1',
+            'слово2': 'замена2',
+            'слово3': 'замена3',
+            'слово4': 'замена4',
+        }
+    },
+    # 1363028986: {#Український Чат 24/7
+    #     'moderation_if_image': False,
+    #     'auto_moderation_and_send_text_message': True,
+    #     'replacements': {
+    #         'слово1': 'замена1',
+    #         'слово2': 'замена2',
+    #         'слово3': 'замена3',
+    #         'слово4': 'замена4',
+    #     }
+    # },
+    4508196790: {#Український Чат 24/7
+        'moderation_if_image': False,
+        'auto_moderation_and_send_text_message': True,
+        'replacements': {
+            'слово1': 'замена1',
+            'слово2': 'замена2',
+            'слово3': 'замена3',
+            'слово4': 'замена4',
+        }
+    },
+    # 1229342507: {#КЛИЕНТЫ || РАБОТА ОНЛАЙН
+    #     'moderation_if_image': False,
+    #     'auto_moderation_and_send_text_message': True,
+    #     'replacements': {
+    #         'слово1': 'замена1',
+    #         'слово2': 'замена2',
+    #         'слово3': 'замена3',
+    #         'слово4': 'замена4',
+    #     }
+    # },
     2023070684: { #Crypto Master | Futures Signals
         'moderation_if_image': False,
         'auto_moderation_and_send_text_message': True, #если это значение труе то будет производить автозамену и отсылать, если фэлз будет делать автозамену и отсылать на сайт человеку
         'replacements': {
-            'bingx.com': 'ссылка на мой сайт',
-            '@SamCrypto_Master': '@мойник',
+            'bingx': 'ссылка на мой сайт',
+            'SamCrypto_Master': 'мойник',
            
         },
         
@@ -47,4 +77,4 @@ channels_to_listen = {
 
 
 #каналы куда отсылаем#
-channels_to_send = [2170620330] #2170620330
+channels_to_send = [2170620330, 2204843457] #2170620330

@@ -11,16 +11,19 @@ from .models import AutoSendMessageSetting
 import re
 from telethon.errors import FloodWaitError
 from telethon.tl.types import PeerChannel
-from collections import deque
+from collections import deque, defaultdict
 import hashlib
 import time
-from telethon.tl.types import InputMediaPhoto
 
 handler_registered = False
 
 # Ограничение на количество хранимых сообщений
 MAX_SENT_MESSAGES = 30
 sent_messages = deque(maxlen=MAX_SENT_MESSAGES)  # Очередь с ограничением размера
+
+# Хранилище для временного сохранения частей сообщений
+message_parts = defaultdict(lambda: {'files': [], 'text': None, 'sender_name': None, 'start_time': None})
+COLLECT_TIMEOUT = 2  # Таймаут ожидания всех частей сообщения
 
 def hash_file(file_path):
     """Вычисляет хэш для файла по его содержимому."""
@@ -53,9 +56,8 @@ async def send_message_to_channels(message_text, files):
         entity = await client.get_entity(PeerChannel(channel))
         try:
             if files:
-                logger.info(f"[send_message_to_channels] Отправка файла в канал: {channel}, файл: {files}")
-                media = [InputMediaPhoto(file) for file in files]
-                await client.send_file(entity, media, caption=message_text, album=True)
+                logger.info(f"[send_message_to_channels] Отправка файла в канал: {channel}, файлы: {files}")
+                await client.send_file(entity, files, caption=message_text, album=True)
             else:
                 logger.info(f"[send_message_to_channels] Отправка сообщения в канал: {channel}")
                 await client.send_message(entity, message_text)
@@ -100,6 +102,42 @@ def extract_original_id(chat_id):
         return int(match.group(1))  # Возвращаем ID без префикса, преобразованное в int
     return abs(chat_id)  # Возвращаем оригинальный chat_id, если префикс отсутствует
 
+async def process_message(chat_id):
+    """Обрабатывает сообщение из `message_parts` после таймаута."""
+    message_data = message_parts[chat_id]
+    
+    files = message_data['files']
+    message_text = message_data['text'] or "No message"
+    sender_name = message_data['sender_name']
+
+    logger.info(f"[process_message] Сообщение из канала {chat_id}: {message_text}, Отправитель: {sender_name}, Файлы: {files}")
+    
+    # Дальнейшая обработка
+    setting = await sync_to_async(AutoSendMessageSetting.objects.first)()
+    if setting and setting.is_enabled:
+        await send_message_to_channels(message_text, files)
+    else:
+        modified_message, moderation_if_image, auto_moderation_and_send_text_message = replace_words(message_text, chat_id)
+        logger.error(f"[process_message] moderation_if_image: {moderation_if_image}, file_paths: {files}, moderation_if_image and file_paths: {moderation_if_image and files}, modified_message: {modified_message}")
+
+        if (moderation_if_image and files) or not auto_moderation_and_send_text_message:
+            logger.info(f"[process_message] Отправка сообщения через WebSocket на фронт человеку")
+            channel_layer = get_channel_layer()
+            await channel_layer.group_send(
+                "telegram_group",
+                {
+                    "type": "send_new_message",
+                    "message": modified_message,
+                    "files": files,
+                },
+            )
+        else:
+            logger.info(f"[process_message] Автоматическое перенаправление в канал")
+            await send_message_to_channels(modified_message, files)
+    
+    # Очищаем временное хранилище для текущего сообщения
+    del message_parts[chat_id]
+
 async def start_client():
     
     global handler_registered
@@ -113,7 +151,6 @@ async def start_client():
 
     for attempt in range(max_retries):
         try:
-             # Регистрируем обработчик, если он еще не был зарегистрирован
             if not handler_registered:
                 logger.info(f"[start_client] Регистрируем обработчик")
                 await client.connect()
@@ -131,37 +168,43 @@ async def start_client():
                     chat_id = extract_original_id(event.chat_id)
                     sender = await event.get_sender()
                     sender_name = getattr(sender, 'first_name', 'Unknown') if hasattr(sender, 'first_name') else getattr(sender, 'title', 'Unknown')
-                    file_paths = []
 
                     if event.message.media:
                         file_path = await event.message.download_media(file=download_directory)
-                        file_paths.append(file_path)
-                        logger.info(f"[handler] Файл загружен: {file_path} из канала {event.chat_id}")
-
-                    message_text = event.message.text if event.message else "No message"
-                    logger.info(f"[handler] Сообщение из канала {event.chat_id}: {message_text}, Отправитель: {sender_name}, Файлы: {file_paths}")
-
-                    setting = await sync_to_async(AutoSendMessageSetting.objects.first)()
-                    if setting and setting.is_enabled:
-                        await send_message_to_channels(message_text, file_paths)
-                    else:
-                        modified_message, moderation_if_image, auto_moderation_and_send_text_message = replace_words(message_text, chat_id)
-                        logger.error(f"[handler] moderation_if_image: {moderation_if_image}, file_paths: {file_paths}, moderation_if_image and file_paths: {moderation_if_image and file_paths}, modified_message: {modified_message}")
-
-                        if (moderation_if_image and file_paths) or not auto_moderation_and_send_text_message:
-                            logger.info(f"[handler] Отправка сообщения через WebSocket на фронт человеку")
-                            channel_layer = get_channel_layer()
-                            await channel_layer.group_send(
-                                "telegram_group",
-                                {
-                                    "type": "send_new_message",
-                                    "message": modified_message,
-                                    "files": file_paths,
-                                },
-                            )
+                        if message_parts[chat_id]['start_time'] is None:
+                            # Запоминаем время первого сообщения с файлом
+                            message_parts[chat_id]['start_time'] = time.time()
+                            message_parts[chat_id]['files'].append(file_path)
+                            message_parts[chat_id]['text'] = event.message.text
+                            
+                            logger.info(f"[handler] Первое сообщение с файлом получено от {chat_id}. Запускаем таймер.")
+                            # Запускаем таймер для обработки сообщения после COLLECT_TIMEOUT
+                            await asyncio.sleep(COLLECT_TIMEOUT)
+                            await process_message(chat_id)
                         else:
-                            logger.info(f"[handler] Автоматическое перенаправление в канал")
-                            await send_message_to_channels(modified_message, file_paths)
+                            if event.message.text: #это сообщение с файлом и текстом оно отдельное само по себе
+                                await asyncio.sleep(COLLECT_TIMEOUT)  #подождем когда уйдет прошлое
+                                message_parts[chat_id]['start_time'] = time.time()
+                                
+                                message_parts[chat_id]['files'].append(file_path)
+                                message_parts[chat_id]['text'] = event.message.text
+                                await process_message(chat_id)    
+                                return
+                            
+                            logger.info(f"[handler] Дополнительный файл получен от {chat_id}. Добавляем к уже полученным файлам.")
+                            message_parts[chat_id]['files'].append(file_path)
+                    else:
+                        if event.message.text:
+                            if message_parts[chat_id]['start_time']:#если ожиндания сборщика
+                                await asyncio.sleep(COLLECT_TIMEOUT)  #подождем когда уйдет прошлое
+                                message_parts[chat_id]['start_time'] = time.time()
+                                
+                            message_parts[chat_id]['text'] = event.message.text
+                            # Обработка сообщения сразу если есть текст
+                            logger.info(f"[handler] Текстовое сообщение получено от {chat_id}. Немедленная обработка.")
+                            await process_message(chat_id)
+                            return
+                                
 
                 logger.info("[start_client] Обработчики NewMessage зарегистрированы для всех каналов")
                 handler_registered = True
@@ -171,13 +214,14 @@ async def start_client():
                 logger.info("[start_client] Обработчики NewMessage уже были зарегестрированы")
 
         except Exception as e:
-            logger.error(f"[start_client] Ошибка при подключении клиента Telethon: {e}")
-            if attempt < max_retries - 1:
-                logger.info(f"Попытка повторного подключения через {delay} секунд... ({attempt + 1}/{max_retries})")
-                time.sleep(delay)
-            else:
-                logger.error("Превышено максимальное количество попыток подключения.")
-                raise
+                        logger.error(f"[start_client] Ошибка при подключении клиента Telethon: {e}")
+                        if attempt < max_retries - 1:
+                            logger.info(f"Попытка повторного подключения через {delay} секунд... ({attempt + 1}/{max_retries})")
+                            time.sleep(delay)
+                        else:
+                            logger.error("Превышено максимальное количество попыток подключения.")
+                        raise
+
 
 async def main():
     logger.info("[main] Запуск основного процесса")
