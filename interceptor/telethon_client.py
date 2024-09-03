@@ -36,7 +36,7 @@ def hash_file(file_path):
 # Создание клиента
 client = TelegramClient(ses.session, channels.api_id, channels.api_hash)
 
-async def send_message_to_channels(message_text, files):
+async def send_message_to_channels(message_text, files, reply_to_msg_id=None):
     logger.info(f"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}")
     await asyncio.sleep(1)
 
@@ -60,7 +60,7 @@ async def send_message_to_channels(message_text, files):
                 await client.send_file(entity, files, caption=message_text, album=True)
             else:
                 logger.info(f"[send_message_to_channels] Отправка сообщения в канал: {channel}")
-                await client.send_message(entity, message_text)
+                await client.send_message(entity, message_text, reply_to=reply_to_msg_id)
         except FloodWaitError as e:
             logger.warning(f"[send_message_to_channels] FloodWaitError: {e}. Ожидание {e.seconds} секунд.")
             await asyncio.sleep(e.seconds)  # Ожидание перед повторной отправкой
@@ -102,7 +102,7 @@ def extract_original_id(chat_id):
         return int(match.group(1))  # Возвращаем ID без префикса, преобразованное в int
     return abs(chat_id)  # Возвращаем оригинальный chat_id, если префикс отсутствует
 
-async def process_message(chat_id):
+async def process_message(chat_id, reply_to_msg_id=None):
     """Обрабатывает сообщение из `message_parts` после таймаута."""
     message_data = message_parts[chat_id]
     
@@ -115,7 +115,7 @@ async def process_message(chat_id):
     # Дальнейшая обработка
     setting = await sync_to_async(AutoSendMessageSetting.objects.first)()
     if setting and setting.is_enabled:
-        await send_message_to_channels(message_text, files)
+        await send_message_to_channels(message_text, files, reply_to_msg_id)
     else:
         modified_message, moderation_if_image, auto_moderation_and_send_text_message = replace_words(message_text, chat_id)
         logger.error(f"[process_message] moderation_if_image: {moderation_if_image}, file_paths: {files}, moderation_if_image and file_paths: {moderation_if_image and files}, modified_message: {modified_message}")
@@ -133,7 +133,7 @@ async def process_message(chat_id):
             )
         else:
             logger.info(f"[process_message] Автоматическое перенаправление в канал")
-            await send_message_to_channels(modified_message, files)
+            await send_message_to_channels(modified_message, files, reply_to_msg_id)
     
     # Очищаем временное хранилище для текущего сообщения
     del message_parts[chat_id]
@@ -168,6 +168,13 @@ async def start_client():
                     chat_id = extract_original_id(event.chat_id)
                     sender = await event.get_sender()
                     sender_name = getattr(sender, 'first_name', 'Unknown') if hasattr(sender, 'first_name') else getattr(sender, 'title', 'Unknown')
+                    
+                    if event.is_reply:
+                        original_message = await event.get_reply_message()
+                        logger.info(f"[handler] Сообщение от {chat_id} является ответом на сообщение ID {original_message.id}.")
+                        
+                        # Set the reply_to_msg_id to the ID of the original message
+                        reply_to_msg_id = original_message.id
 
                     if event.message.media:
                         file_path = await event.message.download_media(file=download_directory)
@@ -180,29 +187,22 @@ async def start_client():
                             logger.info(f"[handler] Первое сообщение с файлом получено от {chat_id}. Запускаем таймер.")
                             # Запускаем таймер для обработки сообщения после COLLECT_TIMEOUT
                             await asyncio.sleep(COLLECT_TIMEOUT)
-                            await process_message(chat_id)
+                            await process_message(chat_id, reply_to_msg_id)
                         else:
-                            if event.message.text: #это сообщение с файлом и текстом оно отдельное само по себе
-                                await asyncio.sleep(COLLECT_TIMEOUT)  #подождем когда уйдет прошлое
-                                message_parts[chat_id]['start_time'] = time.time()
-                                
-                                message_parts[chat_id]['files'].append(file_path)
-                                message_parts[chat_id]['text'] = event.message.text
-                                await process_message(chat_id)    
-                                return
-                            
                             logger.info(f"[handler] Дополнительный файл получен от {chat_id}. Добавляем к уже полученным файлам.")
                             message_parts[chat_id]['files'].append(file_path)
+                            if event.message.text:
+                                message_parts[chat_id]['text'] += event.message.text
                     else:
                         if event.message.text:
                             if message_parts[chat_id]['start_time']:#если ожиндания сборщика
-                                await asyncio.sleep(COLLECT_TIMEOUT)  #подождем когда уйдет прошлое
                                 message_parts[chat_id]['start_time'] = time.time()
+                                await asyncio.sleep(COLLECT_TIMEOUT)  #подождем когда уйдет прошлое
                                 
                             message_parts[chat_id]['text'] = event.message.text
                             # Обработка сообщения сразу если есть текст
                             logger.info(f"[handler] Текстовое сообщение получено от {chat_id}. Немедленная обработка.")
-                            await process_message(chat_id)
+                            await process_message(chat_id, reply_to_msg_id)
                             return
                                 
 

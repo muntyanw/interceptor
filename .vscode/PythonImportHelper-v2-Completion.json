@@ -609,7 +609,7 @@
         "kind": 5,
         "importPath": "interceptor.channels",
         "description": "interceptor.channels",
-        "peekOfCode": "channels_to_send = [2170620330, 2204843457] #2170620330",
+        "peekOfCode": "channels_to_send = [2204843457] #2170620330",
         "detail": "interceptor.channels",
         "documentation": {}
     },
@@ -780,7 +780,7 @@
         "kind": 2,
         "importPath": "interceptor.telethon_client",
         "description": "interceptor.telethon_client",
-        "peekOfCode": "def hash_file(file_path):\n    \"\"\"Вычисляет хэш для файла по его содержимому.\"\"\"\n    hasher = hashlib.sha256()\n    with open(file_path, 'rb') as f:\n        buf = f.read()\n        hasher.update(buf)\n    return hasher.hexdigest()\n# Создание клиента\nclient = TelegramClient(ses.session, channels.api_id, channels.api_hash)\nasync def send_message_to_channels(message_text, files):",
+        "peekOfCode": "def hash_file(file_path):\n    \"\"\"Вычисляет хэш для файла по его содержимому.\"\"\"\n    hasher = hashlib.sha256()\n    with open(file_path, 'rb') as f:\n        buf = f.read()\n        hasher.update(buf)\n    return hasher.hexdigest()\n# Создание клиента\nclient = TelegramClient(ses.session, channels.api_id, channels.api_hash)\nasync def send_message_to_channels(message_text, files, reply_to_msg_id=None):",
         "detail": "interceptor.telethon_client",
         "documentation": {}
     },
@@ -798,7 +798,7 @@
         "kind": 2,
         "importPath": "interceptor.telethon_client",
         "description": "interceptor.telethon_client",
-        "peekOfCode": "def extract_original_id(chat_id):\n    # Преобразовываем chat_id в строку для удобства обработки\n    chat_id_str = str(chat_id)\n    # Проверяем, начинается ли строка с '-100' и извлекаем число\n    match = re.match(r'-100(\\d+)', chat_id_str)\n    if match:\n        return int(match.group(1))  # Возвращаем ID без префикса, преобразованное в int\n    return abs(chat_id)  # Возвращаем оригинальный chat_id, если префикс отсутствует\nasync def process_message(chat_id):\n    \"\"\"Обрабатывает сообщение из `message_parts` после таймаута.\"\"\"",
+        "peekOfCode": "def extract_original_id(chat_id):\n    # Преобразовываем chat_id в строку для удобства обработки\n    chat_id_str = str(chat_id)\n    # Проверяем, начинается ли строка с '-100' и извлекаем число\n    match = re.match(r'-100(\\d+)', chat_id_str)\n    if match:\n        return int(match.group(1))  # Возвращаем ID без префикса, преобразованное в int\n    return abs(chat_id)  # Возвращаем оригинальный chat_id, если префикс отсутствует\nasync def process_message(chat_id, reply_to_msg_id=None):\n    \"\"\"Обрабатывает сообщение из `message_parts` после таймаута.\"\"\"",
         "detail": "interceptor.telethon_client",
         "documentation": {}
     },
@@ -852,7 +852,7 @@
         "kind": 5,
         "importPath": "interceptor.telethon_client",
         "description": "interceptor.telethon_client",
-        "peekOfCode": "client = TelegramClient(ses.session, channels.api_id, channels.api_hash)\nasync def send_message_to_channels(message_text, files):\n    logger.info(f\"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}\")\n    await asyncio.sleep(1)\n    # Создаем уникальный идентификатор сообщения/файла\n    unique_id = message_text if message_text else \"\"\n    if files:\n        for file in files:\n            unique_id += hash_file(file)  # Добавляем хэш файла к идентификатору\n    if unique_id in sent_messages:",
+        "peekOfCode": "client = TelegramClient(ses.session, channels.api_id, channels.api_hash)\nasync def send_message_to_channels(message_text, files, reply_to_msg_id=None):\n    logger.info(f\"[send_message_to_channels] Попытка отправки сообщения: {message_text} с файлами: {files}\")\n    await asyncio.sleep(1)\n    # Создаем уникальный идентификатор сообщения/файла\n    unique_id = message_text if message_text else \"\"\n    if files:\n        for file in files:\n            unique_id += hash_file(file)  # Добавляем хэш файла к идентификатору\n    if unique_id in sent_messages:",
         "detail": "interceptor.telethon_client",
         "documentation": {}
     },
